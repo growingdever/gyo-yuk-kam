@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour {
 
 	public GameObject _budgetPrefab;
 
+	private DeltaStatus[] _deltaStatusByBudget;
+
 
 	void Awake() {
 		DontDestroyOnLoad(transform.gameObject);
@@ -72,7 +74,7 @@ public class GameManager : MonoBehaviour {
 		dialog.transform.localScale = new Vector3( 1, 1, 1 );
 	}
 
-	public void FinishDecisionBudget(int[] values) {
-
+	public void FinishDecisionBudget(DeltaStatus[] values) {
+		_deltaStatusByBudget = values;
 	}
 }

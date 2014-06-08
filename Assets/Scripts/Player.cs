@@ -9,7 +9,7 @@ public class Player {
 		_status = new Status();
 	}
 
-	private class Status {
+	public class Status {
 		double _satisfactionStudent;
 		public double SatisfactionStudent { 
 			get { return _satisfactionStudent; } 
@@ -78,6 +78,27 @@ public class Player {
 			case "stress":
 				_stress += delta.Delta;
 				break;
+			}
+		}
+
+		public static string GetStatusString(int type) {
+			switch( type ) {
+			case 0:
+				return "satisfactionStudent";
+			case 1:
+				return "satisfactionParent";
+			case 2:
+				return "intelligence";
+			case 3:
+				return "stamina";
+			case 4:
+				return "morality";
+			case 5:
+				return "specialty";
+			case 6:
+				return "Stress";
+			default:
+				return "";
 			}
 		}
 	}
