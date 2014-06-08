@@ -1,0 +1,78 @@
+{
+	"time": [ 4 ],
+	"title": "수학 여행 음주",
+	"title_image": "EventImg5.png",
+	"content": "수학 여행에서 단체로 심한 음주를 한 학생들이 방에서 자고 있다가 발견되었습니다. 어떻게 하시겠습니까?",
+	"choices": [
+		{
+			"title": "수학 여행을 없앤다.",
+			"result": [
+				{
+					"title_image": "EventImg5E1a.png",
+					"content": "공부할 수 있는 환경이 되었다고 학부모들만 좋아합니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": 2.0
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": -1.0
+						}
+					]
+				},
+				{
+					"title_image": "EventImg5E1b.png",
+					"content": "쓸데없이 일을 크게 만들었다고 욕을 먹습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": -0.5
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": -2.0
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "음주를 한 학생들을 훈계한다.",
+			"result": [
+				{
+					"title_image": "EventImg5E2a.png",
+					"content": "적절한 대응이라는 반응입니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": 2.0
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": 0.5
+						},
+						{
+							"status": "morality",
+							"delta": 0.5
+						}
+					]
+				},
+				{
+					"title_image": "EventImg5E2b.png",
+					"content": "본격적인 대책이 필요하다고 합니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": -0.5
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": -2.0
+						}
+					]
+				}
+			]
+		}
+	]
+}

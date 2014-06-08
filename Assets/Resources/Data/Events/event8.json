@@ -1,0 +1,78 @@
+{
+	"time": [ 5 ],
+	"title": "교생 실습",
+	"title_image": "EventImg8.png",
+	"content": "교생 실습 주간입니다! 흥분한 학교 분위기를 이용할 수 있을지도 모릅니다. 어떻게 하시겠습니까?",
+	"choices": [
+		{
+			"title": "교생 실습 주간에 학교로 가 격려한다.",
+			"result": [
+				{
+					"title_image": "EventImg8E1a.png",
+					"content": "교생들의 실습 성적이 크게 좋아졌습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": 1.0
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": 1.0
+						}
+					]
+				},
+				{
+					"title_image": "EventImg8E1b.png",
+					"content": "교생들이 매우 불편해 합니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": -1.0
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": -2.0
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "학교 분위기가 흐트러지지 않게 하라고 공문을 보낸다.",
+			"result": [
+				{
+					"title_image": "EventImg8E2a.png",
+					"content": "교생 실습의 효율과 분위기 두 마리 다 잡았습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": 2.0
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": -0.5
+						},
+						{
+							"status": "intelligence",
+							"delta": 0.5
+						}
+					]
+				},
+				{
+					"title_image": "EventImg8E2b.png",
+					"content": "교생들과 학생간의 거리감이 오히려 효율만 떨어트렸습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": -1.0
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": -1.0
+						}
+					]
+				}
+			]
+		}
+	]
+}

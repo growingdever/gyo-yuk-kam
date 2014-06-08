@@ -1,42 +1,74 @@
 {
-	"time": [ 2, 3, 4, 5, 6, 9, 10, 11, 12 ],
-	"title": "학교 폭력 발생!",
-	"title_image": "",
-	"content": "학교 폭력이 발생했습니다. 피해자 학생이 많이 슬퍼합니다.",
+	"time": [ 3 ],
+	"title": "학교 졸업식",
+	"title_image": "EventImg1.png",
+	"content": "학교 졸업 시즌입니다. 졸업식은 흥분한 학생들이 일으킨 '광란' 으로 엉망입니다. 어떻게 하시겠습니까?",
 	"choices": [
 		{
-			"title": "학생을 찾아가 위로한다.",
-			"result": {
-				"title_image": "",
-				"content": "학생들이 당신의 관심에 감복했습니다.",
-				"change_status": [
-					{
-						"status": "intelligence",
-						"delta": -1.0
-					},
-					{
-						"status": "satisfactionStudent",
-						"delta": 2.0
-					}
-				]
-			}
+			"title": "참여한 학생들을 엄벌한다.",
+			"result": [
+				{
+					"title_image": "EventImg1E1a.png",
+					"content": "학부모들이 강경한 모습에 감탄했습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": 2.0
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": -1.0
+						},
+						{
+							"status": "morality",
+							"delta": 1.0
+						}
+					]
+				},
+				{
+					"title_image": "EventImg1E1b.png",
+					"content": "너무 강경한 대응이라는 학부모회의 답변을 받았습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": -1.0
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": -1.0
+						}
+					]
+				}
+			]
 		},
 		{
-			"title": "교사를 처벌한다.",
-			"result": {
-				"title_image": "",
-				"content": "학생들이 어리둥절해 합니다.",
-				"change_status": [
-					{
-						"status": "intelligence",
-						"delta": -1.0
-					},
-					{
-						"status": "satisfactionStudent",
-						"delta": -2.0
-					}
-				]
-			}
+			"title": "다 한 때라며 가만히 둔다.",
+			"result": [
+				{
+					"title_image": "EventImg1E2a.png",
+					"content": "나설 때를 아는 교육감이라는 평가를 받았습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": 1.0
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": 2.0
+						}
+					]
+				},
+				{
+					"title_image": "EventImg1E2b.png",
+					"content": "직무유기를 하고 있다는 평가를 받았습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": -2.0
+						}
+					]
+				}
+			]
 		}
 	]
 }

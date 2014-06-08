@@ -1,0 +1,74 @@
+{
+	"time": [ 6 ],
+	"title": "6 월 모의고사",
+	"title_image": "EventImg10.png",
+	"content": "6 월 모의고사가 실시되었습니다. 학생들의 모의고사 응원을 위해 학교 방문을 해 보시겠습니까?",
+	"choices": [
+		{
+			"title": "모의고사 집중을 위해 격려 공문을 보낸다.",
+			"result": [
+				{
+					"title_image": "EventImg10E1a.png",
+					"content": "격려 공문으로 인해 모의고사 성적이 올랐습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": 1.0
+						}
+					]
+				},
+				{
+					"title_image": "EventImg10E1b.png",
+					"content": "격려 공문이 오히려 긴장감을 유발했습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": -1.0
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": -1.5
+						},
+						{
+							"status": "stress",
+							"delta": 0.5
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "조용히 넘어간다.",
+			"result": [
+				{
+					"title_image": "EventImg10E2a.png",
+					"content": "조용한 분위기 조성이 좋은 결과를 내었습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": 0.5
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": 0.5
+						}
+					]
+				},
+				{
+					"title_image": "EventImg10E2b.png",
+					"content": "조용히 넘어간 것은 아무런 도움이 안되었습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": -0.5
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": -0.5
+						}
+					]
+				}
+			]
+		}
+	]
+}

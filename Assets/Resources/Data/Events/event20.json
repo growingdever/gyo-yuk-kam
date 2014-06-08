@@ -1,0 +1,82 @@
+{
+	"time": [ 11 ],
+	"title": "수학능력시험",
+	"title_image": "EventImg20.png",
+	"content": "수학 능력 시험날입니다! 고사장 앞에서 학부모들과 만날 좋은 기회입니다. 어떻게 하시겠습니까?",
+	"choices": [
+		{
+			"title": "수능 시험장 앞에 나가 학생들을 격려한다.",
+			"result": [
+				{
+					"title_image": "EventImg20E1a.png",
+					"content": "수능 성적이 크게 오르게 되었습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": 2.0
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": 1.5
+						},
+						{
+							"status": "intelligence",
+							"delta": 0.5
+						}
+					]
+				},
+				{
+					"title_image": "EventImg20E1b.png",
+					"content": "오히려 긴장한 학생들은 수능 등급이 낮아졌습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": -2.0
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": -2.0
+						},
+						{
+							"status": "intelligence",
+							"delta": -0.5
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "조용히 넘어간다.",
+			"result": [
+				{
+					"title_image": "EventImg20E2a.png",
+					"content": "조용히 넘어간 것이 오히려 좋은 결과를 내었습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": 2.0
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": 2.0
+						}
+					]
+				},
+				{
+					"title_image": "EventImg20E2b.png",
+					"content": "수능 날짜는 알고 있느냐는 신문기사가 났습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": -1.5
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": -0.5
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,86 @@
+{
+	"time": [ 12 ],
+	"title": "기말고사",
+	"title_image": "EventImg22.png",
+	"content": "기말고사 기간입니다. 한 해를 마무리하는 기말고사로 다들 지쳐 있습니다. 어떻게 하시겠습니까?",
+	"choices": [
+		{
+			"title": "지친 학생들을 위해 가요 콘서트를 주최한다.",
+			"result": [
+				{
+					"title_image": "EventImg22E1a.png",
+					"content": "콘서트로 인해 학생들의 반응이 뜨겁습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": -0.5
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": 2.5
+						},
+						{
+							"status": "stress",
+							"delta": -0.5
+						}
+					]
+				},
+				{
+					"title_image": "EventImg22E1b.png",
+					"content": "콘서트는 집중력만 산만하게 했습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": -1.0
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": -1.5
+						},
+						{
+							"status": "intelligence",
+							"delta": -1.0
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "내년을 위해 계속 학업에 정진하라는 공문을 보낸다.",
+			"result": [
+				{
+					"title_image": "EventImg22E2a.png",
+					"content": "학부모들이 훌륭한 교육감이라고 합니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": 1.5
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": -0.5
+						}
+					]
+				},
+				{
+					"title_image": "EventImg22E2b.png",
+					"content": "학생들만 더 긴장했습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": -0.5
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": -0.5
+						},
+						{
+							"status": "stress",
+							"delta": 0.5
+						}
+					]
+				}
+			]
+		}
+	]
+}

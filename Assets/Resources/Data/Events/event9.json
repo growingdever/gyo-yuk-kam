@@ -1,0 +1,74 @@
+{
+	"time": [ 5 ],
+	"title": "화장실 출산 사건",
+	"title_image": "EventImg9.png",
+	"content": "남녀공학의 여고생이 화장실에서 출산한 사건이 터졌습니다! 어떻게 하시겠습니까?",
+	"choices": [
+		{
+			"title": "남녀 공학 철폐 정책을 발표한다.",
+			"result": [
+				{
+					"title_image": "EventImg9E1a.png",
+					"content": "남녀 공학 철폐로 사건이 크게 줄어들었습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": 2.0
+						}
+					]
+				},
+				{
+					"title_image": "EventImg9E1b.png",
+					"content": "남녀 공학 철폐에도 사건이 종종 터집니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": -2.0
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": -1.5
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "성교육을 강화한다.",
+			"result": [
+				{
+					"title_image": "EventImg9E2a.png",
+					"content": "성교육 강화로 사건이 크게 줄었습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": 0.5
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": 1.5
+						},
+						{
+							"status": "morality",
+							"delta": 1.0
+						}
+					]
+				},
+				{
+					"title_image": "EventImg9E2b.png",
+					"content": "성교육 시간은 그저 학생들의 쉬는 시간이 되었습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": -0.5
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": -0.5
+						}
+					]
+				}
+			]
+		}
+	]
+}

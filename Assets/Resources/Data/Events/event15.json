@@ -1,0 +1,70 @@
+{
+	"time": [ 9 ],
+	"title": "아폴로 눈병 유행",
+	"title_image": "EventImg15.png",
+	"content": "아폴로 눈병이 유행합니다. 이로 인해 결석하는 학생들이 늘고 있습니다. 어떻게 하시겠습니까?",
+	"choices": [
+		{
+			"title": "아폴로 눈병에 걸린 학생도 출석하도록 한다.",
+			"result": [
+				{
+					"title_image": "EventImg15E1a.png",
+					"content": "오히려 눈병 발병률이 줄어들었습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": 0.5
+						}
+					]
+				},
+				{
+					"title_image": "EventImg15E1b.png",
+					"content": "전염병이 크게 퍼졌습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": -0.5
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": -1.0
+						},
+						{
+							"status": "stamina",
+							"delta": -0.5
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "반드시 손을 씻고, 눈을 깨끗히 하는 교육을 한다.",
+			"result": [
+				{
+					"title_image": "EventImg15E2a.png",
+					"content": "근본적인 해결책이라는 평입니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": 1.5
+						},
+						{
+							"status": "stamina",
+							"delta": 1
+						}
+					]
+				},
+				{
+					"title_image": "EventImg15E2b.png",
+					"content": "겨우 대책이 그거냐는 말만 들었습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": -1.5
+						}
+					]
+				}
+			]
+		}
+	]
+}

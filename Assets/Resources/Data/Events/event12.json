@@ -1,0 +1,78 @@
+{
+	"time": [ 6 ],
+	"title": "등교길 교통사고",
+	"title_image": "EventImg12.png",
+	"content": "등교길에 지각한 학생 한명이 서두르다 교통사고를 당하고 말았습니다. 어떻게 하시겠습니까?",
+	"choices": [
+		{
+			"title": "안전 등교길 확보를 실시한다.",
+			"result": [
+				{
+					"title_image": "EventImg12E1a.png",
+					"content": "학생 교통 사고 비율이 눈에 띄게 줄었습니다",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": 1.0
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": 1.0
+						}
+					]
+				},
+				{
+					"title_image": "EventImg12E1b.png",
+					"content": "학생의 교통 사고 비율은 그닥 변화가 없습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": -0.5
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": -1.0
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "학교 등교 시간을 30 분 늦춘다.",
+			"result": [
+				{
+					"title_image": "EventImg12E2a.png",
+					"content": "등교 시간 변화로 학습효율까지 좋아졌습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": -0.5
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": 1.5
+						},
+						{
+							"status": "intelligence",
+							"delta": 0.5
+						}
+					]
+				},
+				{
+					"title_image": "EventImg12E2b.png",
+					"content": "비율은 그대로인데다가 되려 지각생만 더 늘었습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": -1.0
+						},
+						{
+							"status": "intelligence",
+							"delta": -0.5
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,82 @@
+{
+	"time": [ 4 ],
+	"title": "집단 식중독",
+	"title_image": "EventImg4.png",
+	"content": "불량 식재료를 구입한 급식사로 인해 집단 식중독이 발생했습니다. 어떻게 하시겠습니까?",
+	"choices": [
+		{
+			"title": "해당 급식사를 처벌한다.",
+			"result": [
+				{
+					"title_image": "EventImg4E1a.png",
+					"content": "적절한 처벌이라는 반응입니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": 0.5
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": 0.5
+						}
+					]
+				},
+				{
+					"title_image": "EventImg4E1b.png",
+					"content": "빙산의 일각만 바라본다는 기사가 났습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": -0.5
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": -0.5
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "전체 학교를 모두 검사한다.",
+			"result": [
+				{
+					"title_image": "EventImg4E2a.png",
+					"content": "본격적인 건강급식의 시작이라는 뉴스가 났습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": 0.5
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": 0.5
+						},
+						{
+							"status": "stamina",
+							"delta": 0.5
+						}
+					]
+				},
+				{
+					"title_image": "EventImg4E2b.png",
+					"content": "괜한 검사로 인해 학교 급식이 지연되었습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": -1.0
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": -0.5
+						},
+						{
+							"status": "stamina",
+							"delta": -0.5
+						}
+					]
+				}
+			]
+		}
+	]
+}

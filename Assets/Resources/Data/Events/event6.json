@@ -1,0 +1,78 @@
+{
+	"time": [ 4 ],
+	"title": "진로 탐색 체험",
+	"title_image": "EventImg6.png",
+	"content": "진로 탐색 체험으로 학교가 부산합니다. 교육감으로서 학생들의 점수를 딸 기회입니다. 어떻게 하시겠습니까?",
+	"choices": [
+		{
+			"title": "진로 탐색 행사에 참여한다.",
+			"result": [
+				{
+					"title_image": "EventImg6E1a.png",
+					"content": "학부모,  학생 모두 관심있는 교육감이라는 평가입니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": 1.0
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": 1.0
+						},
+						{
+							"status": "specialty",
+							"delta": 0.5
+						}
+					]
+				},
+				{
+					"title_image": "EventImg6E1b.png",
+					"content": "교육감의 참여가 오히려 행사를 형식적으로 만들었습니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": -1.0
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": -1.0
+						},
+						{
+							"status": "stress",
+							"delta": 0.5
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "조용히 넘어간다.",
+			"result": [
+				{
+					"title_image": "EventImg6E2a.png",
+					"content": "눈치 빠른 교육감이라는 평가입니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": 1.0
+						},
+						{
+							"status": "satisfactionStudent",
+							"delta": 1.0
+						}
+					]
+				},
+				{
+					"title_image": "EventImg6E2b.png",
+					"content": "학생들에게 관심 없는 교육감이라는 평가입니다.",
+					"change_status": [
+						{
+							"status": "satisfactionParent",
+							"delta": -1.0
+						}
+					]
+				}
+			]
+		}
+	]
+}
