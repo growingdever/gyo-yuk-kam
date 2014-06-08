@@ -12,8 +12,16 @@ public class GameManager : MonoBehaviour {
 	private EventManager _eventManager;
 
 	public GameObject _uiRoot;
-	public GameObject _dialogPrefab;
-	private GameObject _currentDialog;
+	
+	public GameObject _eventDialogPrefab;
+	private GameObject _currentEventDialog;
+
+	public GameObject _budgetPrefab;
+
+
+	void Awake() {
+		DontDestroyOnLoad(transform.gameObject);
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -39,12 +47,12 @@ public class GameManager : MonoBehaviour {
 		_currTimeLabel.text = "현재 시간 : " + (_startYear + _currMonth / MonthPerYear) + "년 " + _currMonth % MonthPerYear + "월";
 
 
-		GameObject dialog = Instantiate( _dialogPrefab ) as GameObject;
+		GameObject dialog = Instantiate( _eventDialogPrefab ) as GameObject;
 		dialog.transform.parent = _uiRoot.transform;
 		dialog.transform.localScale = new Vector3( 1, 1, 1 );
-		_currentDialog = dialog;
+		_currentEventDialog = dialog;
 
-		DialogController dialogController = _currentDialog.GetComponent<DialogController>();
+		DialogController dialogController = _currentEventDialog.GetComponent<DialogController>();
 		dialogController.InGameEvent = _eventManager.GetEventByMonth( _currMonth );
 
 		UIButton button = dialog.GetComponent<UIButton>();
@@ -54,7 +62,17 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void OnClickDialog() {
-		DialogController dialogController = _currentDialog.GetComponent<DialogController>();
+		DialogController dialogController = _currentEventDialog.GetComponent<DialogController>();
 		dialogController.ShowChoice();
+	}
+
+	public void OnClickBudget() {
+		GameObject dialog = Instantiate( _budgetPrefab ) as GameObject;
+		dialog.transform.parent = _uiRoot.transform;
+		dialog.transform.localScale = new Vector3( 1, 1, 1 );
+	}
+
+	public void FinishDecisionBudget(int[] values) {
+
 	}
 }
