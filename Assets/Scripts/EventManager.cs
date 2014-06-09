@@ -34,6 +34,11 @@ public class EventManager {
 		}
 	}
 
+	public bool IsExistEvenyByMonth(int month) {
+		ArrayList list = _eventMap[month];
+		return list.Count > 0;
+	}
+
 	public InGameEvent GetEventByMonth(int month) {
 		ArrayList list = _eventMap[month];
 		int at = Random.Range( 0, list.Count );

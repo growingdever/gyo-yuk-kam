@@ -12,6 +12,9 @@ public class DialogController : MonoBehaviour {
 
 	private EventManager.InGameEvent _eventData;
 	public EventManager.InGameEvent InGameEvent {
+		get {
+			return _eventData;
+		}
 		set {
 			_eventData = value;
 		}

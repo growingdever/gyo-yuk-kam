@@ -48,19 +48,20 @@ public class GameManager : MonoBehaviour {
 		_currMonth++;
 		_currTimeLabel.text = "현재 시간 : " + (_startYear + _currMonth / MonthPerYear) + "년 " + _currMonth % MonthPerYear + "월";
 
-
-		GameObject dialog = Instantiate( _eventDialogPrefab ) as GameObject;
-		dialog.transform.parent = _uiRoot.transform;
-		dialog.transform.localScale = new Vector3( 1, 1, 1 );
-		_currentEventDialog = dialog;
-
-		DialogController dialogController = _currentEventDialog.GetComponent<DialogController>();
-		dialogController.InGameEvent = _eventManager.GetEventByMonth( _currMonth );
-
-		UIButton button = dialog.GetComponent<UIButton>();
-		EventDelegate eventDelegator = new EventDelegate();
-		eventDelegator.Set( this, "OnClickDialog" );
-		button.onClick.Add( eventDelegator );
+		if( _eventManager.IsExistEvenyByMonth( _currMonth ) ) {
+			GameObject dialog = Instantiate( _eventDialogPrefab ) as GameObject;
+			dialog.transform.parent = _uiRoot.transform;
+			dialog.transform.localScale = new Vector3( 1, 1, 1 );
+			_currentEventDialog = dialog;
+			
+			DialogController dialogController = _currentEventDialog.GetComponent<DialogController>();
+			dialogController.InGameEvent = _eventManager.GetEventByMonth( _currMonth );
+			
+			UIButton button = dialog.GetComponent<UIButton>();
+			EventDelegate eventDelegator = new EventDelegate();
+			eventDelegator.Set( this, "OnClickDialog" );
+			button.onClick.Add( eventDelegator );
+		}
 	}
 
 	public void OnClickDialog() {
