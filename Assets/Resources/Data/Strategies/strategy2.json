@@ -1,0 +1,9 @@
+{
+	"title": "사교육 철폐",
+	"change_status": [
+		{
+			"status": "satisfactionParent",
+			"delta": -1.5
+		}
+	]
+}

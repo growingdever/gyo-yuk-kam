@@ -11,7 +11,17 @@ public class GameManager : MonoBehaviour {
 	private Player _player;
 	private EventManager _eventManager;
 	private ScheduleManager _scheduleManager;
+	public ScheduleManager ScheduleManager {
+		get {
+			return _scheduleManager;
+		}
+	}
 	private StrategyManager _strategyManager;
+	public StrategyManager StrategyManager {
+		get {
+			return _strategyManager;
+		}
+	}
 
 	public GameObject _uiRoot;
 	public UIButton _mainButton1;

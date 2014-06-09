@@ -1,5 +1,6 @@
 {
 	"title": "면접을 통한 대입 전형 확대",
+	"socket": "A",
 	"change_status": [
 		{
 			"status": "satisfactionParent",

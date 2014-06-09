@@ -49,6 +49,12 @@ public class StrategyManager {
 		
 		public Strategy(JsonData json) {
 			_title = (string)json["title"];
+
+			IDictionary tdictionary = json as IDictionary;
+			if(tdictionary.Contains("socket"))
+			{
+
+			}
 			
 			JsonData deltaStatusDict = json["change_status"];
 			_deltaStatus = new DeltaStatus[deltaStatusDict.Count];
