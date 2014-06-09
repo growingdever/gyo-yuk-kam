@@ -15,6 +15,11 @@ public class StrategyManager {
 	}
 
 	LinkedList<int> _selectedStrategies;
+	public LinkedList<int> Selected {
+		get {
+			return _selectedStrategies;
+		}
+	}
 
 	public StrategyManager() {
 		_strategyArray = new ArrayList();
@@ -40,6 +45,11 @@ public class StrategyManager {
 		if (_selectedStrategies.Find (index) == null) {
 			_selectedStrategies.AddLast( index );
 		}
+		Debug.Log (_selectedStrategies.Count + "");
+	}
+
+	public LinkedList<int> GetSelected() {
+		return _selectedStrategies;
 	}
 
 	public class Strategy {
