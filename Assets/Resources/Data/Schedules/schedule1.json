@@ -1,0 +1,21 @@
+{
+	"title": "지역 학교 사찰",
+	"change_status": [
+		{
+			"status": "satisfactionParent",
+			"delta": 2.0
+		},
+		{
+			"status": "satisfactionStudent",
+			"delta": -1.0
+		},
+		{
+			"status": "morality",
+			"delta": 1.0
+		},
+		{
+			"status": "stress",
+			"delta": -0.5
+		}
+	]
+}

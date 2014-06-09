@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour {
 
 	private Player _player;
 	private EventManager _eventManager;
+	private ScheduleManager _scheduleManager;
+	private StrategyManager _strategyManager;
 
 	public GameObject _uiRoot;
 	public UIButton _mainButton1;
@@ -36,6 +38,8 @@ public class GameManager : MonoBehaviour {
 
 		_player = new Player();
 		_eventManager = new EventManager ();
+		_scheduleManager = new ScheduleManager();
+		_strategyManager = new StrategyManager();
 	}
 	
 	// Update is called once per frame

@@ -1,0 +1,25 @@
+{
+	"title": "면접을 통한 대입 전형 확대",
+	"change_status": [
+		{
+			"status": "satisfactionParent",
+			"delta": -1.5
+		},
+		{
+			"status": "satisfactionStudent",
+			"delta": 2.0
+		},
+		{
+			"status": "morality",
+			"delta": 1.0
+		},
+		{
+			"status": "specialty",
+			"delta": 2.0
+		},
+		{
+			"status": "stress",
+			"delta": -1.0
+		}
+	]
+}
