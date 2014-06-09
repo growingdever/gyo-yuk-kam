@@ -41,7 +41,18 @@ public class StrategyDialogControlManager : MonoBehaviour, ButtonReceiver {
 	}
 
 	public void OnClickedButton (ButtonSender sender) {
-		Debug.Log( sender.Identifier.ID );
+		int index = (int)sender.Identifier.ID;
+		StrategyManager.Strategy strategy = (StrategyManager.Strategy)_strategyManager.Strategies[index];
+
+		GameObject clone = NGUITools.AddChild( _selectedList.gameObject, _strategyLabelButtonPrefab );
+		
+		UIAnchor anchor = clone.GetComponent<UIAnchor> ();
+		anchor.container = _selectedList.gameObject;
+		anchor.pixelOffset.Set( anchor.pixelOffset.x, _selectedList.transform.childCount * 24 * -1 );
+		
+		GameObject labelObject = clone.transform.FindChild ("Label").gameObject;
+		UILabel label = labelObject.GetComponent<UILabel>();
+		label.text = strategy.Title;
 	}
 
 	public void Finish() {
