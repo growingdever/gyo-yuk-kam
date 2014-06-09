@@ -23,7 +23,7 @@ public class StrategyDialogControlManager : MonoBehaviour, ButtonReceiver {
 
 			UIAnchor anchor = clone.GetComponent<UIAnchor> ();
 			anchor.container = _unSelectedList.gameObject;
-			anchor.pixelOffset.Set( anchor.pixelOffset.x, i * 24 );
+			anchor.pixelOffset.Set( anchor.pixelOffset.x, -i * 24 );
 
 			GameObject labelObject = clone.transform.FindChild ("Label").gameObject;
 			UILabel label = labelObject.GetComponent<UILabel>();
