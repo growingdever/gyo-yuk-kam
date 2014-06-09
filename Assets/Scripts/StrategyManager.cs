@@ -24,7 +24,7 @@ public class StrategyManager {
 		FileInfo[] info = dir.GetFiles("*.json");
 		foreach (FileInfo f in info) {
 			string onlyName = f.Name.Substring(0, f.Name.LastIndexOf("."));
-			TextAsset fileContent = Resources.Load("Data/Strategies/" + onlyName) as TextAsset;
+			TextAsset fileContent = Resources.Load("Data/Strategies/" + onlyName) as TextAsset;	
 
 			JsonData json = JsonMapper.ToObject(fileContent.text);
 			Strategy strategy = new Strategy(json);
