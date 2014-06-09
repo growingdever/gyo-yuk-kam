@@ -12,6 +12,10 @@ public class GameManager : MonoBehaviour {
 	private EventManager _eventManager;
 
 	public GameObject _uiRoot;
+	public UIButton _mainButton1;
+	public UIButton _mainButton2;
+	public UIButton _mainButton3;
+	public UIButton _mainButton4;
 	
 	public GameObject _eventDialogPrefab;
 	private GameObject _currentEventDialog;
@@ -41,6 +45,9 @@ public class GameManager : MonoBehaviour {
 
 
 	public void OnClickNextMonth() {
+		if( _currMonth % MonthPerYear == 1 ) {
+			_mainButton2.enabled = false;
+		}
 		StartCoroutine ("NextMonth", 1);
 	}
 	public IEnumerator NextMonth(int delay) {
