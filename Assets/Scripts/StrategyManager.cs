@@ -14,8 +14,12 @@ public class StrategyManager {
 		}
 	}
 
+	LinkedList<int> _selectedStrategies;
+
 	public StrategyManager() {
 		_strategyArray = new ArrayList();
+		_selectedStrategies = new LinkedList<int>();
+
 		LoadStrategyDataFromFile ();
 	}
 
@@ -29,6 +33,12 @@ public class StrategyManager {
 			JsonData json = JsonMapper.ToObject(fileContent.text);
 			Strategy strategy = new Strategy(json);
 			_strategyArray.Add( strategy );
+		}
+	}
+
+	public void SelectStrategy(int index) {
+		if (_selectedStrategies.Find (index) == null) {
+			_selectedStrategies.AddLast( index );
 		}
 	}
 

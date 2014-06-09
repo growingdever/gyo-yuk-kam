@@ -41,6 +41,7 @@ public class StrategyDialogControlManager : MonoBehaviour, ButtonReceiver {
 	}
 
 	public void OnClickedButton (ButtonSender sender) {
+		// add ui to panel
 		int index = (int)sender.Identifier.ID;
 		StrategyManager.Strategy strategy = (StrategyManager.Strategy)_strategyManager.Strategies[index];
 
@@ -53,6 +54,9 @@ public class StrategyDialogControlManager : MonoBehaviour, ButtonReceiver {
 		GameObject labelObject = clone.transform.FindChild ("Label").gameObject;
 		UILabel label = labelObject.GetComponent<UILabel>();
 		label.text = strategy.Title;
+
+		// add selected strategy to manager
+		_strategyManager.SelectStrategy (index);
 	}
 
 	public void Finish() {
