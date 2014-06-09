@@ -1,17 +1,13 @@
 {
-	"title": "지역 학교 사찰",
+	"title": "시골 학교 방문",
 	"change_status": [
 		{
-			"status": "satisfactionParent",
-			"delta": 2.0
-		},
-		{
 			"status": "satisfactionStudent",
-			"delta": -1.0
+			"delta": 0.5
 		},
 		{
 			"status": "morality",
-			"delta": 1.0
+			"delta": 0.5
 		},
 		{
 			"status": "stress",

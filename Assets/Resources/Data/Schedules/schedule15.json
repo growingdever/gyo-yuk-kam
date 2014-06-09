@@ -1,0 +1,29 @@
+{
+	"title": "게임/스마트폰 해악 캠페인",
+	"change_status": [
+		{
+			"status": "satisfactionParent",
+			"delta": 3.5
+		},
+		{
+			"status": "satisfactionStudent",
+			"delta": -3.0
+		},
+		{
+			"status": "intelligence",
+			"delta": 0.5
+		},
+		{
+			"status": "morality",
+			"delta": -0.5
+		},
+		{
+			"status": "specialty",
+			"delta": -0.5
+		},
+		{
+			"status": "stress",
+			"delta": 2.0
+		}
+	]
+}

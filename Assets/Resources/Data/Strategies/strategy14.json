@@ -1,0 +1,22 @@
+{
+	"title": "국사 철폐, 국/ 영/ 수 위주 수능 제도 도입",
+	"socket": "",
+	"change_status": [
+		{
+			"status": "satisfactionStudent",
+			"delta": -0.5
+		},
+		{
+			"status": "satisfactionParent",
+			"delta": 1.0
+		},
+		{
+			"status": "intelligence",
+			"delta": 0.5
+		},
+		{
+			"status": "morality",
+			"delta": 1.0
+		}
+	]
+}

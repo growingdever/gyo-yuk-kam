@@ -1,0 +1,26 @@
+{
+	"title": "대학교 입학률에 따른 학교 차등 지원 제도 실시",
+	"socket": "",
+	"change_status": [
+		{
+			"status": "satisfactionStudent",
+			"delta": -2.0
+		},
+		{
+			"status": "satisfactionParent",
+			"delta": 3.0
+		},
+		{
+			"status": "intelligence",
+			"delta": 2.0
+		},
+		{
+			"status": "morality",
+			"delta": -2.0
+		},
+		{
+			"status": "stress",
+			"delta": 2.0
+		}
+	]
+}

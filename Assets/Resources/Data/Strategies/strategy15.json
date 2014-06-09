@@ -1,0 +1,26 @@
+{
+	"title": "미술 / 음악 교육 선택제 전환",
+	"socket": "",
+	"change_status": [
+		{
+			"status": "satisfactionStudent",
+			"delta": -0.5
+		},
+		{
+			"status": "satisfactionParent",
+			"delta": 0.5
+		},
+		{
+			"status": "morality",
+			"delta": -1.0
+		},
+		{
+			"status": "specialty",
+			"delta": -1.0
+		},
+		{
+			"status": "stress",
+			"delta": 0.5
+		}
+	]
+}

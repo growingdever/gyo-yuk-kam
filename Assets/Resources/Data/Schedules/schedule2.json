@@ -1,21 +1,21 @@
 {
-	"title": "지역 학교 사찰",
+	"title": "학교 간식 이벤트",
 	"change_status": [
 		{
 			"status": "satisfactionParent",
-			"delta": 2.0
+			"delta": 0.5
 		},
 		{
 			"status": "satisfactionStudent",
-			"delta": -1.0
+			"delta": 2.0
 		},
 		{
-			"status": "morality",
+			"status": "stamina",
 			"delta": 1.0
 		},
 		{
 			"status": "stress",
-			"delta": -0.5
+			"delta": -1.0
 		}
 	]
 }

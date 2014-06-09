@@ -1,17 +1,17 @@
 {
-	"title": "지역 학교 사찰",
+	"title": "학생 대입 추천서 작성",
 	"change_status": [
 		{
 			"status": "satisfactionParent",
-			"delta": 2.0
+			"delta": 0.5
 		},
 		{
 			"status": "satisfactionStudent",
-			"delta": -1.0
+			"delta": 1.0
 		},
 		{
 			"status": "morality",
-			"delta": 1.0
+			"delta": 0.5
 		},
 		{
 			"status": "stress",

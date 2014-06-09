@@ -1,14 +1,18 @@
 {
-	"title": "면접을 통한 대입 전형 확대",
+	"title": "주말 농장 체험 교실 권고제",
 	"socket": "",
 	"change_status": [
 		{
 			"status": "satisfactionStudent",
-			"delta": 2.0
+			"delta": 0.5
 		},
 		{
 			"status": "satisfactionParent",
-			"delta": -1.5
+			"delta": -0.5
+		},
+		{
+			"status": "stamina",
+			"delta": 1.0
 		},
 		{
 			"status": "morality",
@@ -16,11 +20,11 @@
 		},
 		{
 			"status": "specialty",
-			"delta": 2.0
+			"delta": 0.5
 		},
 		{
 			"status": "stress",
-			"delta": -1.0
+			"delta": -0.5
 		}
 	]
 }

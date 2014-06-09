@@ -1,0 +1,22 @@
+{
+	"title": "남녀 분리 교육 실시",
+	"socket": "",
+	"change_status": [
+		{
+			"status": "satisfactionStudent",
+			"delta": -2.0
+		},
+		{
+			"status": "satisfactionParent",
+			"delta": 2.0
+		},
+		{
+			"status": "intelligence",
+			"delta": 1.0
+		},
+		{
+			"status": "stress",
+			"delta": 1.0
+		}
+	]
+}

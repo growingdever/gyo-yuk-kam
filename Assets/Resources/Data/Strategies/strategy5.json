@@ -1,0 +1,18 @@
+{
+	"title": "국사 교육 확대, 국사 수능 필수 과목 지정",
+	"socket": "",
+	"change_status": [
+		{
+			"status": "satisfactionParent",
+			"delta": -0.5
+		},
+		{
+			"status": "intelligence",
+			"delta": 0.5
+		},
+		{
+			"status": "morality",
+			"delta": 0.5
+		}
+	]
+}

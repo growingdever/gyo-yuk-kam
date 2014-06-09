@@ -1,0 +1,22 @@
+{
+	"title": "학부모 직장 방문 체험 제도",
+	"socket": "",
+	"change_status": [
+		{
+			"status": "satisfactionParent",
+			"delta": -1.0
+		},
+		{
+			"status": "intelligence",
+			"delta": 1.0
+		},
+		{
+			"status": "morality",
+			"delta": 1.5
+		},
+		{
+			"status": "specialty",
+			"delta": 1.0
+		}
+	]
+}

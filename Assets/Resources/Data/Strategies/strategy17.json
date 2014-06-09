@@ -1,0 +1,26 @@
+{
+	"title": "성적에 따른 차등 분반제 실시",
+	"socket": "",
+	"change_status": [
+		{
+			"status": "satisfactionStudent",
+			"delta": -1.5
+		},
+		{
+			"status": "satisfactionParent",
+			"delta": 2.0
+		},
+		{
+			"status": "intelligence",
+			"delta": 1.0
+		},
+		{
+			"status": "morality",
+			"delta": -2.0
+		},
+		{
+			"status": "stress",
+			"delta": 1.0
+		}
+	]
+}

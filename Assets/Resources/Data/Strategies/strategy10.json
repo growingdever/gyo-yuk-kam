@@ -1,26 +1,26 @@
 {
-	"title": "면접을 통한 대입 전형 확대",
+	"title": "인문학 도서 보급 및 독서 장려",
 	"socket": "",
 	"change_status": [
 		{
 			"status": "satisfactionStudent",
-			"delta": 2.0
-		},
-		{
-			"status": "satisfactionParent",
-			"delta": -1.5
-		},
-		{
-			"status": "morality",
 			"delta": 1.0
 		},
 		{
-			"status": "specialty",
+			"status": "satisfactionParent",
+			"delta": -0.5
+		},
+		{
+			"status": "intelligence",
+			"delta": 0.5
+		},
+		{
+			"status": "morality",
 			"delta": 2.0
 		},
 		{
 			"status": "stress",
-			"delta": -1.0
+			"delta": -1.5
 		}
 	]
 }

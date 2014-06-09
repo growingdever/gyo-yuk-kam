@@ -1,0 +1,22 @@
+{
+	"title": "스마트폰 교실 반입 금지 제도 실시",
+	"socket": "",
+	"change_status": [
+		{
+			"status": "satisfactionStudent",
+			"delta": -2.0
+		},
+		{
+			"status": "satisfactionParent",
+			"delta": 1.5
+		},
+		{
+			"status": "intelligence",
+			"delta": 1.5
+		},
+		{
+			"status": "stress",
+			"delta": 1.5
+		}
+	]
+}

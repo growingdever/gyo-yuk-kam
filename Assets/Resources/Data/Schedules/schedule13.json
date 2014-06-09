@@ -1,0 +1,13 @@
+{
+	"title": "자서전 발간",
+	"change_status": [
+		{
+			"status": "satisfactionParent",
+			"delta": 0.5
+		},
+		{
+			"status": "satisfactionStudent",
+			"delta": -0.5
+		}
+	]
+}

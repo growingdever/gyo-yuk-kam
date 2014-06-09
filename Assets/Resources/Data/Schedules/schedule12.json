@@ -1,0 +1,9 @@
+{
+	"title": "봉사활동 참여",
+	"change_status": [
+		{
+			"status": "satisfactionParent",
+			"delta": 0.5
+		}
+	]
+}

@@ -1,0 +1,9 @@
+{
+	"title": "학부모 간담회",
+	"change_status": [
+		{
+			"status": "satisfactionParent",
+			"delta": 2.0
+		}
+	]
+}

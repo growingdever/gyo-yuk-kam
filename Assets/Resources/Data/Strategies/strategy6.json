@@ -1,22 +1,30 @@
 {
-	"title": "면접을 통한 대입 전형 확대",
+	"title": "방과 후 취미 교실 확대",
 	"socket": "",
 	"change_status": [
 		{
 			"status": "satisfactionStudent",
-			"delta": 2.0
-		},
-		{
-			"status": "satisfactionParent",
-			"delta": -1.5
-		},
-		{
-			"status": "morality",
 			"delta": 1.0
 		},
 		{
+			"status": "satisfactionParent",
+			"delta": -1.0
+		},
+		{
+			"status": "intelligence",
+			"delta": 0.5
+		},
+		{
+			"status": "stamina",
+			"delta": 0.5
+		},
+		{
+			"status": "morality",
+			"delta": 0.5
+		},
+		{
 			"status": "specialty",
-			"delta": 2.0
+			"delta": 1.0
 		},
 		{
 			"status": "stress",

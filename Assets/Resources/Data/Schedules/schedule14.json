@@ -1,21 +1,21 @@
 {
-	"title": "지역 학교 사찰",
+	"title": "학부모 교실 방문 주최",
 	"change_status": [
 		{
 			"status": "satisfactionParent",
-			"delta": 2.0
+			"delta": 1.5
 		},
 		{
 			"status": "satisfactionStudent",
-			"delta": -1.0
+			"delta": -2.0
 		},
 		{
-			"status": "morality",
-			"delta": 1.0
+			"status": "intelligence",
+			"delta": 0.5
 		},
 		{
 			"status": "stress",
-			"delta": -0.5
+			"delta": 2.0
 		}
 	]
 }

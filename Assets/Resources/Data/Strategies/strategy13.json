@@ -1,0 +1,26 @@
+{
+	"title": "기초 학력 인증제 도입",
+	"socket": "",
+	"change_status": [
+		{
+			"status": "satisfactionStudent",
+			"delta": -0.5
+		},
+		{
+			"status": "satisfactionParent",
+			"delta": 0.5
+		},
+		{
+			"status": "intelligence",
+			"delta": 0.5
+		},
+		{
+			"status": "stamina",
+			"delta": -0.5
+		},
+		{
+			"status": "stress",
+			"delta": 0.5
+		}
+	]
+}

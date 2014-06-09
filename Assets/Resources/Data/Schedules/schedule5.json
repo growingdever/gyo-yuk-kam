@@ -1,0 +1,17 @@
+{
+	"title": "해외 교육자 초청",
+	"change_status": [
+		{
+			"status": "satisfactionParent",
+			"delta": 1.0
+		},
+		{
+			"status": "intelligence",
+			"delta": 0.5
+		},
+		{
+			"status": "stress",
+			"delta": 0.5
+		}
+	]
+}

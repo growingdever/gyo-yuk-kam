@@ -1,0 +1,34 @@
+{
+	"title": "사교육 장려",
+	"socket": "",
+	"change_status": [
+		{
+			"status": "satisfactionStudent",
+			"delta": -1.5
+		},
+		{
+			"status": "satisfactionParent",
+			"delta": 2.0
+		},
+		{
+			"status": "intelligence",
+			"delta": 1.5
+		},
+		{
+			"status": "stamina",
+			"delta": -1.0
+		},
+		{
+			"status": "morality",
+			"delta": -0.5
+		},
+		{
+			"status": "specialty",
+			"delta": -1.0
+		},
+		{
+			"status": "stress",
+			"delta": -1.0
+		}
+	]
+}
