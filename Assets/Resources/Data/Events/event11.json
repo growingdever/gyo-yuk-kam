@@ -31,7 +31,7 @@
 					"change_status": [
 						{
 							"status": "satisfactionParent",
-							"delta": 0
+							"delta": 0.0
 						},
 						{
 							"status": "satisfactionStudent",

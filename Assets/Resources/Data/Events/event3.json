@@ -65,6 +65,7 @@
 					"change_status": [
 						{
 							"status": "satisfactionParent",
+							"delta": 0.5
 						}
 					]
 				}

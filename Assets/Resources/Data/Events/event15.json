@@ -50,7 +50,7 @@
 						},
 						{
 							"status": "stamina",
-							"delta": 1
+							"delta": 1.0
 						}
 					]
 				},

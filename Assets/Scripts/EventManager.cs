@@ -101,6 +101,26 @@ public class EventManager {
 			}
 		}
 
+		private Result[] _results;
+		public Result[] Result {
+			get {
+				return _results;
+			}
+		}
+
+		public Choice(JsonData json) {
+			_title = (string)json["title"];
+
+			JsonData resultJson = json["result"];
+			_results = new Result[resultJson.Count];
+			for( int i = 0; i < resultJson.Count; i ++ ) {
+				JsonData resultJsonData = resultJson[i];
+				_results[i] = new Result( resultJsonData );
+			}
+		}
+	}
+
+	public class Result {
 		private string _resultImage;
 		public string ResultImagePath {
 			get {
@@ -116,21 +136,23 @@ public class EventManager {
 		}
 
 		private DeltaStatus[] _deltaStatus;
+		public DeltaStatus[] DeltaStatus {
+			get {
+				return _deltaStatus;
+			}
+		}
 
-		public Choice(JsonData json) {
-			_title = (string)json["title"];
+		public Result(JsonData json) {
+			_resultImage = (string)json["title_image"];
+			_resultContent = (string)json["content"];
 
-			JsonData resultJson = json["result"];
-			_resultImage = (string)resultJson["title_image"];
-			_resultContent = (string)resultJson["content"];
-
-			JsonData deltaStatusDict = resultJson["change_status"];
+			JsonData deltaStatusDict = json["change_status"];
 			_deltaStatus = new DeltaStatus[deltaStatusDict.Count];
 			for( int i = 0; i < deltaStatusDict.Count; i ++ ) {
 				JsonData deltaStatusItem = deltaStatusDict[i];
 				string targetName = (string)deltaStatusItem["status"];
 				double delta = (double)deltaStatusItem["delta"];
-
+				
 				_deltaStatus[i] = new DeltaStatus( targetName, delta );
 			}
 		}

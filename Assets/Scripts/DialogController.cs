@@ -65,7 +65,9 @@ public class DialogController : MonoBehaviour {
 
 	void UpdateDialogStateResult() {
 		MyNGUITool.SetLabelText (_title, _selectedChoice.Title);
-		MyNGUITool.SetLabelText (_content, _selectedChoice.ResultContent);
+
+		EventManager.Result result = _selectedChoice.Result[Random.Range(0, _selectedChoice.Result.Length)];
+		MyNGUITool.SetLabelText (_content, result.ResultContent);
 
 		NGUITools.SetActive (_choice1, false);
 		NGUITools.SetActive (_choice2, false);
