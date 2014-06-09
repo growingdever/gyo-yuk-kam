@@ -18,18 +18,20 @@ public class StrategyDialogControlManager : MonoBehaviour, ButtonReceiver {
 		int size = _strategyManager.Strategies.Count;
 		for (int i = 0; i < size; i ++) {
 			StrategyManager.Strategy strategy = (StrategyManager.Strategy)_strategyManager.Strategies[i];
-			Debug.Log( strategy.Title );
 
 			GameObject clone = NGUITools.AddChild( _unSelectedList.gameObject, _strategyLabelButtonPrefab );
-			MyNGUITool.SetLabelText( clone, "Label", strategy.Title );
+
+			UIAnchor anchor = clone.GetComponent<UIAnchor> ();
+			anchor.container = _unSelectedList.gameObject;
+			anchor.pixelOffset.Set( anchor.pixelOffset.x, i * 24 );
+
+			GameObject labelObject = clone.transform.FindChild ("Label").gameObject;
+			UILabel label = labelObject.GetComponent<UILabel>();
+			label.text = strategy.Title;
 
 			ButtonSender sender = clone.GetComponent<ButtonSender>();
 			sender.SetController( this );
 			sender.Identifier.ID = i;
-			
-			UIAnchor anchor = clone.GetComponent<UIAnchor> ();
-			anchor.container = _unSelectedList.gameObject;
-			anchor.pixelOffset.Set( anchor.pixelOffset.x, i * 24 );
 		}
 	}
 	
