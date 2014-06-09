@@ -22,7 +22,7 @@ public class ButtonSender : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-//		_controller = _receiver.GetComponent<StrategyDialogControlManager>();
+
 	}
 	
 	// Update is called once per frame
@@ -35,7 +35,6 @@ public class ButtonSender : MonoBehaviour {
 	}
 
 	public void OnClick() {
-		_controller = GameObject.Find("StrategyDialog").GetComponent<StrategyDialogControlManager>();
 		_controller.OnClickedButton( this );
 	}
 }

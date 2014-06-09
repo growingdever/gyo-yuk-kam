@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour {
 	private GameObject _currentEventDialog;
 
 	public GameObject _budgetPrefab;
+	public GameObject _strategyPrefab;
 
 	private DeltaStatus[] _deltaStatusByBudget;
 
@@ -94,6 +95,10 @@ public class GameManager : MonoBehaviour {
 		GameObject dialog = Instantiate( _budgetPrefab ) as GameObject;
 		dialog.transform.parent = _uiRoot.transform;
 		dialog.transform.localScale = new Vector3( 1, 1, 1 );
+	}
+
+	public void OnClickStrategy() {
+		NGUITools.AddChild (_uiRoot, _strategyPrefab);
 	}
 
 	public void FinishDecisionBudget(DeltaStatus[] values) {

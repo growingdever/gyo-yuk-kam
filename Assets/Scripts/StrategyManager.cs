@@ -8,7 +8,7 @@ using System.IO;
 public class StrategyManager {
 
 	ArrayList _strategyArray;
-	public ArrayList Schedules {
+	public ArrayList Strategies {
 		get {
 			return _strategyArray;
 		}
@@ -27,8 +27,8 @@ public class StrategyManager {
 			TextAsset fileContent = Resources.Load("Data/Strategies/" + onlyName) as TextAsset;
 
 			JsonData json = JsonMapper.ToObject(fileContent.text);
-			Strategy scheduleData = new Strategy(json);
-			_strategyArray.Add( scheduleData );
+			Strategy strategy = new Strategy(json);
+			_strategyArray.Add( strategy );
 		}
 	}
 
