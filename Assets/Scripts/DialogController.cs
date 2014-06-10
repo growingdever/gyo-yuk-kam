@@ -35,6 +35,12 @@ public class DialogController : MonoBehaviour {
 	
 	}
 
+	public void OnClick() {
+		if( NGUITools.GetActive( _content ) == true ) {
+			ShowChoice();
+		}
+	}
+
 	public void SetEvent(EventManager.InGameEvent eventData) {
 		_eventData = eventData;
 	}
@@ -60,20 +66,21 @@ public class DialogController : MonoBehaviour {
 		_selectedChoice = _eventData.Choice[0];
 		UpdateDialogStateResult ();
 	}
-
 	public void OnClickChoice2() {
 		_selectedChoice = _eventData.Choice[1];
 		UpdateDialogStateResult ();
 	}
 
 	void UpdateDialogStateResult() {
-		MyNGUITool.SetLabelText (_title, _selectedChoice.Title);
-
-		EventManager.Result result = _selectedChoice.Result[Random.Range(0, _selectedChoice.Result.Length)];
-		MyNGUITool.SetLabelText (_content, result.ResultContent);
-
 		NGUITools.SetActive (_choice1, false);
 		NGUITools.SetActive (_choice2, false);
 		NGUITools.SetActive (_content, true);
+
+		EventManager.Result result = _selectedChoice.Result[Random.Range(0, _selectedChoice.Result.Length)];
+		MyNGUITool.SetLabelText (_title, _selectedChoice.Title);
+		MyNGUITool.SetLabelText (_content, result.ResultContent);
+
+
+		// send selected choice to manager
 	}
 }

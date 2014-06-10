@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour {
 	}
 	public IEnumerator NextMonth(int delay) {
 		for( int i = 1; i <= DayOfMonth[_currMonth % MonthPerYear + 1]; i ++ ) {
-			yield return new WaitForSeconds(0.1f);
+			yield return new WaitForSeconds(0.05f);
 			_calendarDay.text = i + "";
 		}
 
@@ -85,18 +85,11 @@ public class GameManager : MonoBehaviour {
 		_currTimeLabel.text = "현재 시간 : " + (_startYear + _currMonth / MonthPerYear) + "년 " + _currMonth % MonthPerYear + "월";
 
 		if( _eventManager.IsExistEvenyByMonth( _currMonth ) ) {
-			GameObject dialog = Instantiate( _eventDialogPrefab ) as GameObject;
-			dialog.transform.parent = _uiRoot.transform;
-			dialog.transform.localScale = new Vector3( 1, 1, 1 );
+			GameObject dialog = NGUITools.AddChild( _uiRoot, _eventDialogPrefab );
 			_currentEventDialog = dialog;
 			
 			DialogController dialogController = _currentEventDialog.GetComponent<DialogController>();
 			dialogController.InGameEvent = _eventManager.GetEventByMonth( _currMonth );
-			
-			UIButton button = dialog.GetComponent<UIButton>();
-			EventDelegate eventDelegator = new EventDelegate();
-			eventDelegator.Set( this, "OnClickDialog" );
-			button.onClick.Add( eventDelegator );
 		}
 	}
 
