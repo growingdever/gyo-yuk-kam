@@ -63,7 +63,5 @@ public class BudgetControlManager : MonoBehaviour {
 		for( int i = 0; i < 7; i ++ ) {
 			deltaStatusArray[i] = new DeltaStatus( Player.Status.GetStatusString(i), deltaArr[i] );
 		}
-
-		_gameManager.FinishDecisionBudget( deltaStatusArray );
 	}
 }

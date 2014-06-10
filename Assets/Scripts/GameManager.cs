@@ -48,7 +48,6 @@ public class GameManager : MonoBehaviour {
 	public GameObject _strategyPrefab;
 	public GameObject _schedulePrefab;
 
-	private DeltaStatus[] _deltaStatusByBudget;
 
 	private int[] DayOfMonth = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
@@ -152,9 +151,5 @@ public class GameManager : MonoBehaviour {
 
 	public void OnClickSchedule() {
 		NGUITools.AddChild (_uiRoot, _schedulePrefab);
-	}
-
-	public void FinishDecisionBudget(DeltaStatus[] values) {
-		_deltaStatusByBudget = values;
 	}
 }
