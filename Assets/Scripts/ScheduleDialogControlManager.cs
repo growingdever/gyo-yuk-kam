@@ -7,6 +7,14 @@ public class ScheduleDialogControlManager : MonoBehaviour, ButtonReceiver {
 	public GameObject _labelButtonPrefab;
 
 	ScheduleManager _scheduleManager;
+	ScheduleManager.Schedule[] _selectedSchedules;
+	ScheduleManager.Schedule _prevSelectedSchedule;
+
+	GameObject[] _quaterNode;
+
+	public ScheduleDialogControlManager() {
+
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -31,6 +39,13 @@ public class ScheduleDialogControlManager : MonoBehaviour, ButtonReceiver {
 			sender.SetController( this );
 			sender.Identifier.ID = i;
 		}
+
+		_selectedSchedules = new ScheduleManager.Schedule[4];
+		_quaterNode = new GameObject[_selectedSchedules.Length];
+		for (int i = 0; i < _quaterNode.Length; i ++) {
+			GameObject finded = GameObject.Find("Month" + (i+1));
+			_quaterNode[i] = finded;
+		}
 	}
 	
 	// Update is called once per frame
@@ -42,11 +57,53 @@ public class ScheduleDialogControlManager : MonoBehaviour, ButtonReceiver {
 		// add ui to panel
 		int index = (int)sender.Identifier.ID;
 		ScheduleManager.Schedule schedule = (ScheduleManager.Schedule)_scheduleManager.Schedules[index];
+		_prevSelectedSchedule = schedule;
+	}
 
-		Debug.Log (schedule.Title);
+	public void UpdateQuaterPart() {
+		Debug.Log ("UpdateQuaterPart");
+		for( int i = 0; i < _selectedSchedules.Length; i ++ ) {
+			ScheduleManager.Schedule schedule = _selectedSchedules[i];
+			if( schedule == null ) 
+				continue;
+
+			// if that quater already has schedule, skip.
+			if( _quaterNode[i].transform.childCount > 1 )
+				continue;
+
+			GameObject clone = NGUITools.AddChild( _quaterNode[i], _labelButtonPrefab );
+			UIAnchor anchor = clone.GetComponent<UIAnchor> ();
+			anchor.container = _quaterNode[i];
+
+			GameObject labelObject = clone.transform.FindChild ("Label").gameObject;
+			UILabel label = labelObject.GetComponent<UILabel>();
+			label.text = schedule.Title;
+			label.pivot = UIWidget.Pivot.Center;
+		}
 	}
 
 	public void Finish() {
 
+	}
+
+	public void OnClickQuater1() {
+		_selectedSchedules [0] = _prevSelectedSchedule;
+		UpdateQuaterPart ();
+		_prevSelectedSchedule = null;
+	}
+	public void OnClickQuater2() {
+		_selectedSchedules [1] = _prevSelectedSchedule;
+		UpdateQuaterPart ();
+		_prevSelectedSchedule = null;
+	}
+	public void OnClickQuater3() {
+		_selectedSchedules [2] = _prevSelectedSchedule;
+		UpdateQuaterPart ();
+		_prevSelectedSchedule = null;
+	}
+	public void OnClickQuater4() {
+		_selectedSchedules [3] = _prevSelectedSchedule;
+		UpdateQuaterPart ();
+		_prevSelectedSchedule = null;
 	}
 }
