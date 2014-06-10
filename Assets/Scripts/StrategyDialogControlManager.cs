@@ -38,7 +38,6 @@ public class StrategyDialogControlManager : MonoBehaviour, ButtonReceiver {
 
 		LinkedList<int> selected = _strategyManager.GetSelected ();
 		size = selected.Count;
-		Debug.Log ("selected : " + size);
 		for (int i = 0; i < size; i ++) {
 			int index = selected.ElementAt(i);
 
