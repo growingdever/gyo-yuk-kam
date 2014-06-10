@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour {
 	public const int MonthPerYear = 12;
 	public int _startYear;
 	public int _currMonth;
-	public UILabel _currTimeLabel;
 
 	private Player _player;
 	private EventManager _eventManager;
@@ -52,7 +51,6 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		_currMonth = 1;
-		_currTimeLabel.text = "현재 시간 : " + (_startYear + _currMonth / MonthPerYear) + "년 " + _currMonth % MonthPerYear + "월";
 
 		_calendarMonth.text = _currMonth + "";
 		_calendarDay.text = 1 + "";
@@ -76,13 +74,14 @@ public class GameManager : MonoBehaviour {
 		StartCoroutine ( "NextMonth", 1 );
 	}
 	public IEnumerator NextMonth(int delay) {
-		for( int i = 1; i <= DayOfMonth[_currMonth % MonthPerYear + 1]; i ++ ) {
-			yield return new WaitForSeconds(0.05f);
+		for( int i = 1; i <= DayOfMonth[_currMonth % MonthPerYear - 1]; i ++ ) {
 			_calendarDay.text = i + "";
+			yield return new WaitForSeconds( 0.05f );
 		}
 
 		_currMonth++;
-		_currTimeLabel.text = "현재 시간 : " + (_startYear + _currMonth / MonthPerYear) + "년 " + _currMonth % MonthPerYear + "월";
+		_calendarMonth.text = _currMonth + "";
+		_calendarDay.text = 1 + "";
 
 		if( _eventManager.IsExistEvenyByMonth( _currMonth ) ) {
 			GameObject dialog = NGUITools.AddChild( _uiRoot, _eventDialogPrefab );
