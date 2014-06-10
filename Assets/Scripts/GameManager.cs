@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 public class GameManager : MonoBehaviour {
 
@@ -40,6 +42,7 @@ public class GameManager : MonoBehaviour {
 	
 	public GameObject _eventDialogPrefab;
 	private GameObject _currentEventDialog;
+	public bool _skipEventFlag;
 
 	public GameObject _budgetPrefab;
 	public GameObject _strategyPrefab;
@@ -55,7 +58,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		_currMonth = 1;
+		_currMonth = 5;
 
 		_calendarMonth.text = _currMonth + "";
 		_calendarDay.text = 1 + "";
@@ -95,6 +98,9 @@ public class GameManager : MonoBehaviour {
 
 		for( int i = 1; i <= totalDay; i ++ ) {
 			if( i == eventDay ) {
+				if( _skipEventFlag )
+					continue;
+
 				if( _eventManager.IsExistEvenyByMonth( _currMonth ) ) {
 					GameObject dialog = NGUITools.AddChild( _uiRoot, _eventDialogPrefab );
 					_currentEventDialog = dialog;
@@ -116,6 +122,17 @@ public class GameManager : MonoBehaviour {
 		_currMonth++;
 		if( _currMonth % MonthPerYear == 7 || _currMonth % MonthPerYear == 1 ) {
 			_currMonth += 2;
+
+			// change status
+			ArrayList deltaList;
+			deltaList = _strategyManager.GetDeltaArray();
+			for( int i = 0; i < deltaList.Count; i ++ ) {
+				DeltaStatus delta = deltaList[i] as DeltaStatus;
+				_player.GetStatus().ChangeStatus( delta );
+			}
+			_strategyManager.ClearSelected();
+
+			UpdateGauge();
 		}
 
 		_calendarMonth.text = _currMonth + "";

@@ -45,11 +45,30 @@ public class StrategyManager {
 		if (_selectedStrategies.Find (index) == null) {
 			_selectedStrategies.AddLast( index );
 		}
-		Debug.Log (_selectedStrategies.Count + "");
 	}
 
 	public LinkedList<int> GetSelected() {
 		return _selectedStrategies;
+	}
+
+	public void ClearSelected() {
+		_selectedStrategies.Clear();
+	}
+
+	public ArrayList GetDeltaArray() {
+		ArrayList list = new ArrayList();
+
+		for( int i = 0; i < _selectedStrategies.Count; i ++ ) {
+			int index = _selectedStrategies.ElementAt(i);
+			Strategy strategy = _strategyArray[index] as Strategy;
+
+			DeltaStatus[] arr = strategy.DeltaStatus;
+			for( int j = 0; j < arr.Length; j ++ ) {
+				list.Add( strategy.DeltaStatus[j] );
+			}
+		}
+
+		return list;
 	}
 
 	public class Strategy {
