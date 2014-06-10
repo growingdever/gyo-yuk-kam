@@ -50,7 +50,7 @@ public class ScheduleDialogControlManager : MonoBehaviour, ButtonReceiver {
 		for( int i = 0; i < _selectedSchedules.Length; i ++ ) {
 			_selectedSchedules[i] = _scheduleManager.SelectedSchedules[i];
 		}
-		UpdateQuaterPart ();
+		UpdateQuaterPart ();	
 	}
 	
 	// Update is called once per frame
@@ -66,7 +66,6 @@ public class ScheduleDialogControlManager : MonoBehaviour, ButtonReceiver {
 	}
 
 	public void UpdateQuaterPart() {
-		Debug.Log ("UpdateQuaterPart");
 		for( int i = 0; i < _selectedSchedules.Length; i ++ ) {
 			ScheduleManager.Schedule schedule = _selectedSchedules[i];
 			if( schedule == null ) 
