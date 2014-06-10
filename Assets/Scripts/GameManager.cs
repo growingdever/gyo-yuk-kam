@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour {
 
 	public GameObject _budgetPrefab;
 	public GameObject _strategyPrefab;
+	public GameObject _schedulePrefab;
 
 	private DeltaStatus[] _deltaStatusByBudget;
 
@@ -146,6 +147,10 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void OnClickStrategy() {
+		NGUITools.AddChild (_uiRoot, _strategyPrefab);
+	}
+
+	public void OnClickSchedule() {
 		NGUITools.AddChild (_uiRoot, _strategyPrefab);
 	}
 
