@@ -25,7 +25,7 @@ public class StrategyDialogControlManager : MonoBehaviour, ButtonReceiver {
 
 			UIAnchor anchor = clone.GetComponent<UIAnchor> ();
 			anchor.container = _unSelectedList.gameObject;
-			anchor.pixelOffset.Set( anchor.pixelOffset.x, -i * 24 );
+			anchor.pixelOffset.Set( anchor.pixelOffset.x, -i * 20 );
 
 			GameObject labelObject = clone.transform.FindChild ("Label").gameObject;
 			UILabel label = labelObject.GetComponent<UILabel>();
@@ -47,7 +47,7 @@ public class StrategyDialogControlManager : MonoBehaviour, ButtonReceiver {
 			
 			UIAnchor anchor = clone.GetComponent<UIAnchor> ();
 			anchor.container = _selectedList.gameObject;
-			anchor.pixelOffset.Set( anchor.pixelOffset.x, _selectedList.transform.childCount * 24 * -1 );
+			anchor.pixelOffset.Set( anchor.pixelOffset.x, _selectedList.transform.childCount * 46 * -1 );
 			
 			GameObject labelObject = clone.transform.FindChild ("Label").gameObject;
 			UILabel label = labelObject.GetComponent<UILabel>();
@@ -69,7 +69,7 @@ public class StrategyDialogControlManager : MonoBehaviour, ButtonReceiver {
 		
 		UIAnchor anchor = clone.GetComponent<UIAnchor> ();
 		anchor.container = _selectedList.gameObject;
-		anchor.pixelOffset.Set( anchor.pixelOffset.x, _selectedList.transform.childCount * 24 * -1 );
+		anchor.pixelOffset.Set( anchor.pixelOffset.x, _selectedList.transform.childCount * 46 * -1 );
 		
 		GameObject labelObject = clone.transform.FindChild ("Label").gameObject;
 		UILabel label = labelObject.GetComponent<UILabel>();
