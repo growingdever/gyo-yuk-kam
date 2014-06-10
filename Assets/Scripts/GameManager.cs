@@ -90,7 +90,6 @@ public class GameManager : MonoBehaviour {
 		StartCoroutine ( "NextMonth", 1 );
 	}
 	public IEnumerator NextMonth(int delay) {
-
 		int totalDay = DayOfMonth[_currMonth % MonthPerYear - 1];
 		int eventDay = Random.Range( 1, totalDay + 1 );
 
@@ -115,6 +114,10 @@ public class GameManager : MonoBehaviour {
 		}
 
 		_currMonth++;
+		if( _currMonth % MonthPerYear == 7 || _currMonth % MonthPerYear == 1 ) {
+			_currMonth += 2;
+		}
+
 		_calendarMonth.text = _currMonth + "";
 		_calendarDay.text = 1 + "";
 	}
