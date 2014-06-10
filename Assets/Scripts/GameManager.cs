@@ -74,7 +74,26 @@ public class GameManager : MonoBehaviour {
 		StartCoroutine ( "NextMonth", 1 );
 	}
 	public IEnumerator NextMonth(int delay) {
-		for( int i = 1; i <= DayOfMonth[_currMonth % MonthPerYear - 1]; i ++ ) {
+
+		int totalDay = DayOfMonth[_currMonth % MonthPerYear - 1];
+		int eventDay = Random.Range( 1, totalDay + 1 );
+
+		for( int i = 1; i <= totalDay; i ++ ) {
+			if( i == eventDay ) {
+				if( _eventManager.IsExistEvenyByMonth( _currMonth ) ) {
+					GameObject dialog = NGUITools.AddChild( _uiRoot, _eventDialogPrefab );
+					_currentEventDialog = dialog;
+					
+					DialogController dialogController = _currentEventDialog.GetComponent<DialogController>();
+					dialogController.InGameEvent = _eventManager.GetEventByMonth( _currMonth );
+
+					while(true) {
+						if( dialogController.Closed ) break;
+						yield return 0;
+					}
+				}
+			}
+
 			_calendarDay.text = i + "";
 			yield return new WaitForSeconds( 0.05f );
 		}
@@ -82,14 +101,6 @@ public class GameManager : MonoBehaviour {
 		_currMonth++;
 		_calendarMonth.text = _currMonth + "";
 		_calendarDay.text = 1 + "";
-
-		if( _eventManager.IsExistEvenyByMonth( _currMonth ) ) {
-			GameObject dialog = NGUITools.AddChild( _uiRoot, _eventDialogPrefab );
-			_currentEventDialog = dialog;
-			
-			DialogController dialogController = _currentEventDialog.GetComponent<DialogController>();
-			dialogController.InGameEvent = _eventManager.GetEventByMonth( _currMonth );
-		}
 	}
 
 	public void OnClickDialog() {

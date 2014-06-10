@@ -21,8 +21,17 @@ public class DialogController : MonoBehaviour {
 	}
 	private EventManager.Choice _selectedChoice;
 
+	bool _isClosed;
+	public bool Closed {
+		get {
+			return _isClosed;
+		}
+	}
+
 	// Use this for initialization
 	void Start () {
+		_isClosed = false;
+
 		NGUITools.SetActive( _choice1, false );
 		NGUITools.SetActive( _choice2, false );
 
@@ -48,6 +57,7 @@ public class DialogController : MonoBehaviour {
 	public void ShowChoice() {
 		if (_selectedChoice != null) {
 			Destroy( _target );
+			_isClosed = true;
 		}
 
 		NGUITools.SetActive( _content, false );
