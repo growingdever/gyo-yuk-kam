@@ -48,6 +48,10 @@ public class GameManager : MonoBehaviour {
 	public GameObject _strategyPrefab;
 	public GameObject _schedulePrefab;
 
+	public GameObject _backSkyDay;
+	public GameObject _backSkySunset;
+	public GameObject _backSkyNight;
+
 
 	private int[] DayOfMonth = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
@@ -84,19 +88,50 @@ public class GameManager : MonoBehaviour {
 		_gaugeMorality.value = (float)(_player.GetStatus().Morality / Player.Status.Max);
 		_gaugeSpecialty.value = (float)(_player.GetStatus().Specialty / Player.Status.Max);
 		_gaugeStress.value = (float)(_player.GetStatus().Stress / Player.Status.Max);
-    }
-    
-    public void OnClickNextMonth() {
+	}
+	
+	public void OnClickNextMonth() {
 		if( _currMonth % MonthPerYear == 1 ) {
 			_mainButton2.enabled = false;
 		}
-		StartCoroutine ( "NextMonth", 1 );
+
+
+		StartCoroutine ( "NextMonth", 0.2f );
 	}
-	public IEnumerator NextMonth(int delay) {
+	public IEnumerator NextMonth(float delay) {
 		int totalDay = DayOfMonth[_currMonth % MonthPerYear - 1];
 		int eventDay = Random.Range( 1, totalDay + 1 );
 
+		int[] endOfAnimationDay = new int[5];
+		endOfAnimationDay [0] = 1;
+		endOfAnimationDay [1] = (totalDay / 3) * 1;
+		endOfAnimationDay [2] = (totalDay / 3) * 2;
+		endOfAnimationDay [3] = (totalDay / 3) * 3;
+		endOfAnimationDay [4] = totalDay;
+		int currAnimation = 0;
+
 		for( int i = 1; i <= totalDay; i ++ ) {
+			if( i == endOfAnimationDay[ currAnimation ] && currAnimation <= 2 ) {
+				int diff = endOfAnimationDay[ currAnimation + 1 ] - endOfAnimationDay[ currAnimation ];
+				float duration = diff * delay;
+
+				if( currAnimation == 0 ) {
+					TweenAlpha.Begin (_backSkyDay, duration, 0);
+					iTween.MoveTo (_backSkyDay, iTween.Hash ("X", 2, 
+						"time", duration));
+				} else if( currAnimation == 1 ) {
+					TweenAlpha.Begin (_backSkySunset, duration, 0);
+					iTween.MoveTo (_backSkySunset, iTween.Hash ("X", 2, 
+						"time", duration));
+				} else if( currAnimation == 2 ) {
+					TweenAlpha.Begin (_backSkyNight, duration, 0);
+					iTween.MoveTo (_backSkyNight, iTween.Hash ("X", 2, 
+						"time", duration));
+				}
+
+				currAnimation++;
+			}
+
 			if( i == eventDay ) {
 				if( _skipEventFlag )
 					continue;
@@ -116,7 +151,7 @@ public class GameManager : MonoBehaviour {
 			}
 
 			_calendarDay.text = i + "";
-			yield return new WaitForSeconds( 0.05f );
+			yield return new WaitForSeconds( delay );
 		}
 
 		_currMonth++;
@@ -137,6 +172,14 @@ public class GameManager : MonoBehaviour {
 
 		_calendarMonth.text = _currMonth + "";
 		_calendarDay.text = 1 + "";
+
+		// initialize background for next month
+		_backSkyDay.transform.localPosition = new Vector3 (-1092, 223, 0);
+		TweenAlpha.Begin (_backSkyDay, 0.01f, 1.0f);
+		_backSkySunset.transform.localPosition = new Vector3 (-1092, 223, 0);
+		TweenAlpha.Begin (_backSkySunset, 0.01f, 1.0f);
+		_backSkyNight.transform.localPosition = new Vector3 (-1092, 223, 0);
+		TweenAlpha.Begin (_backSkyNight, 0.01f, 1.0f);
 	}
 
 	public void OnClickBudget() {
