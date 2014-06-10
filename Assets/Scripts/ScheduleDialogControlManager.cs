@@ -46,6 +46,11 @@ public class ScheduleDialogControlManager : MonoBehaviour, ButtonReceiver {
 			GameObject finded = GameObject.Find("Month" + (i+1));
 			_quaterNode[i] = finded;
 		}
+
+		for( int i = 0; i < _selectedSchedules.Length; i ++ ) {
+			_selectedSchedules[i] = _scheduleManager.SelectedSchedules[i];
+		}
+		UpdateQuaterPart ();
 	}
 	
 	// Update is called once per frame
@@ -83,7 +88,11 @@ public class ScheduleDialogControlManager : MonoBehaviour, ButtonReceiver {
 	}
 
 	public void Finish() {
+		for (int i = 0; i < _selectedSchedules.Length; i ++) {
+			_scheduleManager.SelectedSchedules[i] = _selectedSchedules[i];
+		}
 
+		Destroy( gameObject );
 	}
 
 	public void OnClickQuater1() {

@@ -14,8 +14,16 @@ public class ScheduleManager {
 		}
 	}
 
+	Schedule[] _selectedSchedule;
+	public Schedule[] SelectedSchedules {
+		get {
+			return _selectedSchedule;
+		}
+	}
+
 	public ScheduleManager() {
 		_scheduleArray = new ArrayList();
+		_selectedSchedule = new Schedule[4];
 		LoadScheduleDataFromFile ();
 	}
 
