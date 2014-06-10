@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ButtonSender : MonoBehaviour {
 
-	StrategyDialogControlManager _controller;
+	ButtonReceiver _controller;
 	Identifier _identifier;
 	public Identifier Identifier {
 		get {
@@ -30,7 +30,7 @@ public class ButtonSender : MonoBehaviour {
 	
 	}
 
-	public void SetController(StrategyDialogControlManager controller) {
+	public void SetController(ButtonReceiver controller) {
 		_controller = controller;
 	}
 

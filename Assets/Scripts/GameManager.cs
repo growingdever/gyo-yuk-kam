@@ -151,7 +151,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void OnClickSchedule() {
-		NGUITools.AddChild (_uiRoot, _strategyPrefab);
+		NGUITools.AddChild (_uiRoot, _schedulePrefab);
 	}
 
 	public void FinishDecisionBudget(DeltaStatus[] values) {
