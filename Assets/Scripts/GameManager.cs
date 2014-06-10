@@ -28,6 +28,11 @@ public class GameManager : MonoBehaviour {
 	public UIButton _mainButton2;
 	public UIButton _mainButton3;
 	public UIButton _mainButton4;
+
+	public UILabel _calendarMonth;
+	public UILabel _calendarDay;
+	public UISlider _gaugeSatisfactionParent;
+	public UISlider _gaugeSatisfactionStudent;
 	
 	public GameObject _eventDialogPrefab;
 	private GameObject _currentEventDialog;
@@ -36,6 +41,8 @@ public class GameManager : MonoBehaviour {
 	public GameObject _strategyPrefab;
 
 	private DeltaStatus[] _deltaStatusByBudget;
+
+	private int[] DayOfMonth = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
 
 	void Awake() {
@@ -46,6 +53,9 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		_currMonth = 1;
 		_currTimeLabel.text = "현재 시간 : " + (_startYear + _currMonth / MonthPerYear) + "년 " + _currMonth % MonthPerYear + "월";
+
+		_calendarMonth.text = _currMonth + "";
+		_calendarDay.text = 1 + "";
 
 		_player = new Player();
 		_eventManager = new EventManager ();
@@ -63,10 +73,16 @@ public class GameManager : MonoBehaviour {
 		if( _currMonth % MonthPerYear == 1 ) {
 			_mainButton2.enabled = false;
 		}
-		StartCoroutine ("NextMonth", 1);
+		StartCoroutine (NextMonth(()=> {
+			return WaitForSeconds();
+		}, 1));
 	}
 	public IEnumerator NextMonth(int delay) {
-		yield return new WaitForSeconds(delay);
+		for( int i = 1; i <= DayOfMonth[_currMonth % MonthPerYear + 1]; i ++ ) {
+			yield return new WaitForSeconds(0.1f);
+			_calendarDay.text = i + "";
+		}
+
 		_currMonth++;
 		_currTimeLabel.text = "현재 시간 : " + (_startYear + _currMonth / MonthPerYear) + "년 " + _currMonth % MonthPerYear + "월";
 
