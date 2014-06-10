@@ -73,9 +73,7 @@ public class GameManager : MonoBehaviour {
 		if( _currMonth % MonthPerYear == 1 ) {
 			_mainButton2.enabled = false;
 		}
-		StartCoroutine (NextMonth(()=> {
-			return WaitForSeconds();
-		}, 1));
+		StartCoroutine ( "NextMonth", 1 );
 	}
 	public IEnumerator NextMonth(int delay) {
 		for( int i = 1; i <= DayOfMonth[_currMonth % MonthPerYear + 1]; i ++ ) {
