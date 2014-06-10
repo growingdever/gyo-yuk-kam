@@ -7,7 +7,7 @@ public class StrategyDialogControlManager : MonoBehaviour, ButtonReceiver {
 
 	public UIPanel _unSelectedList;
 	public UIPanel _selectedList;
-	public GameObject _strategyLabelButtonPrefab;
+	public GameObject _labelButtonPrefab;
 
 	private StrategyManager _strategyManager;
 
@@ -21,7 +21,7 @@ public class StrategyDialogControlManager : MonoBehaviour, ButtonReceiver {
 		for (int i = 0; i < size; i ++) {
 			StrategyManager.Strategy strategy = (StrategyManager.Strategy)_strategyManager.Strategies[i];
 
-			GameObject clone = NGUITools.AddChild( _unSelectedList.gameObject, _strategyLabelButtonPrefab );
+			GameObject clone = NGUITools.AddChild( _unSelectedList.gameObject, _labelButtonPrefab );
 
 			UIAnchor anchor = clone.GetComponent<UIAnchor> ();
 			anchor.container = _unSelectedList.gameObject;
@@ -43,7 +43,7 @@ public class StrategyDialogControlManager : MonoBehaviour, ButtonReceiver {
 
 			StrategyManager.Strategy strategy = (StrategyManager.Strategy)_strategyManager.Strategies[index];
 			
-			GameObject clone = NGUITools.AddChild( _selectedList.gameObject, _strategyLabelButtonPrefab );
+			GameObject clone = NGUITools.AddChild( _selectedList.gameObject, _labelButtonPrefab );
 			
 			UIAnchor anchor = clone.GetComponent<UIAnchor> ();
 			anchor.container = _selectedList.gameObject;
@@ -65,7 +65,7 @@ public class StrategyDialogControlManager : MonoBehaviour, ButtonReceiver {
 		int index = (int)sender.Identifier.ID;
 		StrategyManager.Strategy strategy = (StrategyManager.Strategy)_strategyManager.Strategies[index];
 
-		GameObject clone = NGUITools.AddChild( _selectedList.gameObject, _strategyLabelButtonPrefab );
+		GameObject clone = NGUITools.AddChild( _selectedList.gameObject, _labelButtonPrefab );
 		
 		UIAnchor anchor = clone.GetComponent<UIAnchor> ();
 		anchor.container = _selectedList.gameObject;
