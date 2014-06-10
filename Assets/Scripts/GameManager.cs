@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		_currMonth = 5;
+		_currMonth = 1;
 
 		_calendarMonth.text = _currMonth + "";
 		_calendarDay.text = 1 + "";
@@ -91,12 +91,14 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	public void OnClickNextMonth() {
-		if( _currMonth % MonthPerYear == 1 ) {
+		int month = _currMonth % MonthPerYear;
+		if( month == 3 || month == 9 ) {
+			_mainButton1.enabled = false;
 			_mainButton2.enabled = false;
+			_mainButton3.enabled = false;
 		}
 
-
-		StartCoroutine ( "NextMonth", 0.2f );
+		StartCoroutine ( "NextMonth", 0.05f );
 	}
 	public IEnumerator NextMonth(float delay) {
 		int totalDay = DayOfMonth[_currMonth % MonthPerYear - 1];
@@ -155,7 +157,10 @@ public class GameManager : MonoBehaviour {
 		}
 
 		_currMonth++;
-		if( _currMonth % MonthPerYear == 7 || _currMonth % MonthPerYear == 1 ) {
+		int month = _currMonth % MonthPerYear;
+
+		// calculate status
+		if( month == 7 || month == 1 ) {
 			_currMonth += 2;
 
 			// change status
@@ -170,7 +175,13 @@ public class GameManager : MonoBehaviour {
 			UpdateGauge();
 		}
 
-		_calendarMonth.text = _currMonth + "";
+		// activate ui
+		if (month == 7) {
+			_mainButton1.enabled = true;
+		}
+
+
+		_calendarMonth.text = month + "";
 		_calendarDay.text = 1 + "";
 
 		// initialize background for next month
