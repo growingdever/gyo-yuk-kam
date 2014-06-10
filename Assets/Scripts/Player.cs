@@ -7,9 +7,23 @@ public class Player {
 
 	public Player() {
 		_status = new Status();
+
+		_status.SatisfactionParent = 5;
+		_status.SatisfactionStudent = 5;
+		_status.Int = 3;
+		_status.Stamina = 3;
+		_status.Morality = 3;
+		_status.Specialty = 3;
+		_status.Stress = 3;
+	}
+
+	public Status GetStatus() {
+		return _status;
 	}
 
 	public class Status {
+		public const double Max = 10.0f;
+
 		double _satisfactionStudent;
 		public double SatisfactionStudent { 
 			get { return _satisfactionStudent; } 

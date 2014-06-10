@@ -32,6 +32,11 @@ public class GameManager : MonoBehaviour {
 	public UILabel _calendarDay;
 	public UISlider _gaugeSatisfactionParent;
 	public UISlider _gaugeSatisfactionStudent;
+	public UISlider _gaugeIntelligence;
+	public UISlider _gaugeStamina;
+	public UISlider _gaugeMorality;
+	public UISlider _gaugeSpecialty;
+	public UISlider _gaugeStress;
 	
 	public GameObject _eventDialogPrefab;
 	private GameObject _currentEventDialog;
@@ -59,6 +64,8 @@ public class GameManager : MonoBehaviour {
 		_eventManager = new EventManager ();
 		_scheduleManager = new ScheduleManager();
 		_strategyManager = new StrategyManager();
+
+		UpdateGauge();
 	}
 	
 	// Update is called once per frame
@@ -66,8 +73,17 @@ public class GameManager : MonoBehaviour {
 	
 	}
 
-
-	public void OnClickNextMonth() {
+	void UpdateGauge() {
+		_gaugeSatisfactionParent.value = (float)(_player.GetStatus().SatisfactionParent / Player.Status.Max);
+		_gaugeSatisfactionStudent.value = (float)(_player.GetStatus().SatisfactionStudent / Player.Status.Max);
+		_gaugeIntelligence.value = (float)(_player.GetStatus().Int / Player.Status.Max);
+		_gaugeStamina.value = (float)(_player.GetStatus().Stamina / Player.Status.Max);
+		_gaugeMorality.value = (float)(_player.GetStatus().Morality / Player.Status.Max);
+		_gaugeSpecialty.value = (float)(_player.GetStatus().Specialty / Player.Status.Max);
+		_gaugeStress.value = (float)(_player.GetStatus().Stress / Player.Status.Max);
+    }
+    
+    public void OnClickNextMonth() {
 		if( _currMonth % MonthPerYear == 1 ) {
 			_mainButton2.enabled = false;
 		}
@@ -101,11 +117,6 @@ public class GameManager : MonoBehaviour {
 		_currMonth++;
 		_calendarMonth.text = _currMonth + "";
 		_calendarDay.text = 1 + "";
-	}
-
-	public void OnClickDialog() {
-		DialogController dialogController = _currentEventDialog.GetComponent<DialogController>();
-		dialogController.ShowChoice();
 	}
 
 	public void OnClickBudget() {
