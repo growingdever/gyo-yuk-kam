@@ -11,16 +11,25 @@ public class GameManager : MonoBehaviour {
 
 	private Player _player;
 	private EventManager _eventManager;
+
 	private ScheduleManager _scheduleManager;
 	public ScheduleManager ScheduleManager {
 		get {
 			return _scheduleManager;
 		}
 	}
+
 	private StrategyManager _strategyManager;
 	public StrategyManager StrategyManager {
 		get {
 			return _strategyManager;
+		}
+	}
+
+	private BudgetManager _budgetManager;
+	public BudgetManager BudgetManager {
+		get {
+			return _budgetManager;
 		}
 	}
 
@@ -71,6 +80,7 @@ public class GameManager : MonoBehaviour {
 		_eventManager = new EventManager ();
 		_scheduleManager = new ScheduleManager();
 		_strategyManager = new StrategyManager();
+		_budgetManager = new BudgetManager();
 
 		UpdateGauge();
 	}
@@ -225,9 +235,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void OnClickBudget() {
-		GameObject dialog = Instantiate( _budgetPrefab ) as GameObject;
-		dialog.transform.parent = _uiRoot.transform;
-		dialog.transform.localScale = new Vector3( 1, 1, 1 );
+		NGUITools.AddChild( _uiRoot, _budgetPrefab );
 	}
 
 	public void OnClickStrategy() {
