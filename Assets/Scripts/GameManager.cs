@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour {
 	public int _startYear;
 	public int _currMonth;
 
+	public int IncumbencyYear;
+	int _passedSemester;
+
 	private Player _player;
 	private EventManager _eventManager;
 
@@ -114,7 +117,7 @@ public class GameManager : MonoBehaviour {
 			_mainButton3.enabled = false;
 		}
 
-		StartCoroutine ( "NextMonth", 0.02f );
+		StartCoroutine ( "NextMonth", 0.002f );
 	}
 	public IEnumerator NextMonth(float delay) {
 		int totalDay = DayOfMonth[CalculatedMonth() - 1];
@@ -189,6 +192,8 @@ public class GameManager : MonoBehaviour {
 
 		// semester is ended!
 		if( month == 3 || month == 9 ) {
+			_passedSemester++;
+
 			// change status
 			do {
 				ArrayList deltaList;
@@ -204,7 +209,7 @@ public class GameManager : MonoBehaviour {
 						_player.GetStatus().ChangeStatus( delta );
 					}
                     _strategyManager.ClearSelected();
-                    
+                    	
                     // change by budget
 					deltaList = _budgetManager.GetDeltaArray();
 					for( int i = 0; i < deltaList.Count; i ++ ) {
@@ -224,6 +229,19 @@ public class GameManager : MonoBehaviour {
 				_mainButton2.enabled = true;
             	_mainButton3.enabled = true;
 			}
+		}
+
+
+		// if passed incumbency years, check satisfaction of parent for next term
+		if( _passedSemester > 0 && _passedSemester % (IncumbencyYear * 2) == 0 ) {
+			GameObject prefab;
+			if( _player.GetStatus().SatisfactionParent >= 6 ) {
+				prefab = Resources.Load("DialogYeonimSuccess") as GameObject;
+			} else {
+				prefab = Resources.Load("DialogYeonimFail") as GameObject;
+			}
+
+			NGUITools.AddChild( _uiRoot, prefab );
 		}
 
 
