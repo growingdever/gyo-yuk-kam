@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BudgetControlManager : MonoBehaviour {
+public class BudgetDialogController : MonoBehaviour {
 
 	private GameManager _gameManager;
 
