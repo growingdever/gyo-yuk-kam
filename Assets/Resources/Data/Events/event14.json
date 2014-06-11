@@ -1,14 +1,14 @@
 {
 	"time": [ 9 ],
 	"title": "수시 원서 접수",
-	"title_image": "EventImg14.png",
+	"title_image": "EventImg14",
 	"content": "수시 원서 접수 주간입니다! 조용한 긴장이 흐르는 가운데, 수시를 접수하는 학생들을 격려하시겠습니까?",
 	"choices": [
 		{
 			"title": "대학 입학을 위한 현명한 길이라는 연설을 한다.",
 			"result": [
 				{
-					"title_image": "EventImg14E1a.png",
+					"title_image": "EventImg14E1a",
 					"content": "수시 접수 비율과 함께 합격자수도 올랐습니다.",
 					"change_status": [
 						{
@@ -26,7 +26,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg14E1b.png",
+					"title_image": "EventImg14E1b",
 					"content": "연설은 큰 도움이 안되었습니다.",
 					"change_status": [
 						{
@@ -45,7 +45,7 @@
 			"title": "가급적 수능도 함께 준비하라는 내용을 발표한다.",
 			"result": [
 				{
-					"title_image": "EventImg14E2a.png",
+					"title_image": "EventImg14E2a",
 					"content": "수시의 부담감이 덜어졌습니다",
 					"change_status": [
 						{
@@ -63,7 +63,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg14E2b.png",
+					"title_image": "EventImg14E2b",
 					"content": "수능까지 준비해야 한다는 압박감만 주었습니다.",
 					"change_status": [
 						{

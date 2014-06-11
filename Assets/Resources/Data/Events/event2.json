@@ -1,14 +1,14 @@
 {
 	"time": [ 3 ],
 	"title": "학교 입학식",
-	"title_image": "EventImg2.png",
+	"title_image": "EventImg2",
 	"content": "학교 입학 시즌입니다. 이 시기에 학교를 방문하면 지지율을 올릴 수 있을지도 모릅니다. 어떻게 하시겠습니까?",
 	"choices": [
 		{
 			"title": "학교를 방문해 연설을 한다.",
 			"result": [
 				{
-					"title_image": "EventImg2E1a.png",
+					"title_image": "EventImg2E1a",
 					"content": "학부모, 학생 모두가 연설에 감동했습니다.",
 					"change_status": [
 						{
@@ -26,7 +26,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg2E1b.png",
+					"title_image": "EventImg2E1b",
 					"content": "더 지루해진 입학식이라는 기사가 났습니다.",
 					"change_status": [
 						{
@@ -45,7 +45,7 @@
 			"title": "입학식은 학생과 학부모를 위한 것이니 지나친다.",
 			"result": [
 				{
-					"title_image": "EventImg2E2a.png",
+					"title_image": "EventImg2E2a",
 					"content": "빠른 입학식 종료로 모두가 행복해 했습니다.",
 					"change_status": [
 						{
@@ -63,7 +63,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg2E2b.png",
+					"title_image": "EventImg2E2b",
 					"content": "무관심한 교육감이라는 말을 듣게 되었습니다.",
 					"change_status": [
 						{

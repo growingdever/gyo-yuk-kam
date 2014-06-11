@@ -1,14 +1,14 @@
 {
 	"time": [ 12 ],
 	"title": "눈싸움 환자 발생",
-	"title_image": "EventImg24.png",
+	"title_image": "EventImg24",
 	"content": "쉬는 시간에 눈 싸움을 하던 학생들이, 돌을 넣은 눈에 맞아 심한 상처를 입었습니다. 어떻게 하시겠습니까?",
 	"choices": [
 		{
 			"title": "안전 교육을 강화한다.",
 			"result": [
 				{
-					"title_image": "EventImg24E1a.png",
+					"title_image": "EventImg24E1a",
 					"content": "안전 교육으로 다치는 비율이 줄었습니다.",
 					"change_status": [
 						{
@@ -22,7 +22,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg24E1b.png",
+					"title_image": "EventImg24E1b",
 					"content": "안전 교육은 쇠귀에 경 읽기 였습니다.",
 					"change_status": [
 						{
@@ -41,7 +41,7 @@
 			"title": "쉬는 시간을 줄인다.",
 			"result": [
 				{
-					"title_image": "EventImg24E2a.png",
+					"title_image": "EventImg24E2a",
 					"content": "쉬는 시간이 줄자 놀지 못해 사고가 줄었습니다.",
 					"change_status": [
 						{
@@ -55,7 +55,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg24E2b.png",
+					"title_image": "EventImg24E2b",
 					"content": "대체 무슨 생각이었는지 궁금해합니다.",
 					"change_status": [
 						{

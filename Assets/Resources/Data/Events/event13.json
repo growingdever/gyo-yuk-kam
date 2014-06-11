@@ -1,14 +1,14 @@
 {
 	"time": [ 9 ],
 	"title": "9 월 모의고사",
-	"title_image": "EventImg13.png",
+	"title_image": "EventImg13",
 	"content": "9 월 모의고사가 실시되었습니다. 학생들의 모의고사 응원을 위해 학교 방문을 해 보시겠습니까?",
 	"choices": [
 		{
 			"title": "모의고사 집중을 위해 격려 공문을 보낸다.",
 			"result": [
 				{
-					"title_image": "EventImg13E1a.png",
+					"title_image": "EventImg13E1a",
 					"content": "격려 공문으로 인해 모의고사 성적이 올랐습니다.",
 					"change_status": [
 						{
@@ -18,7 +18,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg13E1b.png",
+					"title_image": "EventImg13E1b",
 					"content": "격려 공문이 오히려 긴장감을 유발했습니다.",
 					"change_status": [
 						{
@@ -41,7 +41,7 @@
 			"title": "조용히 넘어간다.",
 			"result": [
 				{
-					"title_image": "EventImg13E2a.png",
+					"title_image": "EventImg13E2a",
 					"content": "스스로 더 분발하는 분위기가 되었습니다.",
 					"change_status": [
 						{
@@ -55,7 +55,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg13E2b.png",
+					"title_image": "EventImg13E2b",
 					"content": "아무런 효과가 없었습니다.",
 					"change_status": [
 						{

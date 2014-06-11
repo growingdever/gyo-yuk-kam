@@ -1,14 +1,14 @@
 {
 	"time": [ 10 ],
 	"title": "교사 성추행 사건",
-	"title_image": "EventImg16.png",
+	"title_image": "EventImg16",
 	"content": "교사가 학생을 성추행 하는 사건이 터졌습니다. 여론이 시끄럽습니다. 어떻게 하시겠습니까?",
 	"choices": [
 		{
 			"title": "해당 교사를 처벌한다.",
 			"result": [
 				{
-					"title_image": "EventImg16E1a.png",
+					"title_image": "EventImg16E1a",
 					"content": "강경한 대응에 여론이 좋아합니다.",
 					"change_status": [
 						{
@@ -22,7 +22,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg16E1b.png",
+					"title_image": "EventImg16E1b",
 					"content": "눈 가리고 아웅식 대처라고 합니다.",
 					"change_status": [
 						{
@@ -41,7 +41,7 @@
 			"title": "모든 교사들을 철저히 검증한다.",
 			"result": [
 				{
-					"title_image": "EventImg16E2a.png",
+					"title_image": "EventImg16E2a",
 					"content": "본격적인 해결을 위한 행동에 모두가 좋아합니다.",
 					"change_status": [
 						{
@@ -55,7 +55,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg16E2b.png",
+					"title_image": "EventImg16E2b",
 					"content": "너무 강경한 처리가 아니냐는 평가를 들었습니다.",
 					"change_status": [
 						{

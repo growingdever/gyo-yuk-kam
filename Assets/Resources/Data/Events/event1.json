@@ -1,14 +1,14 @@
 {
 	"time": [ 3 ],
 	"title": "학교 졸업식",
-	"title_image": "EventImg1.png",
+	"title_image": "EventImg1",
 	"content": "학교 졸업 시즌입니다. 졸업식은 흥분한 학생들이 일으킨 '광란' 으로 엉망입니다. 어떻게 하시겠습니까?",
 	"choices": [
 		{
 			"title": "참여한 학생들을 엄벌한다.",
 			"result": [
 				{
-					"title_image": "EventImg1E1a.png",
+					"title_image": "EventImg1E1a",
 					"content": "학부모들이 강경한 모습에 감탄했습니다.",
 					"change_status": [
 						{
@@ -26,7 +26,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg1E1b.png",
+					"title_image": "EventImg1E1b",
 					"content": "너무 강경한 대응이라는 학부모회의 답변을 받았습니다.",
 					"change_status": [
 						{
@@ -45,7 +45,7 @@
 			"title": "다 한 때라며 가만히 둔다.",
 			"result": [
 				{
-					"title_image": "EventImg1E2a.png",
+					"title_image": "EventImg1E2a",
 					"content": "나설 때를 아는 교육감이라는 평가를 받았습니다.",
 					"change_status": [
 						{
@@ -59,7 +59,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg1E2b.png",
+					"title_image": "EventImg1E2b",
 					"content": "직무유기를 하고 있다는 평가를 받았습니다.",
 					"change_status": [
 						{

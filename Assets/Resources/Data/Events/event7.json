@@ -1,14 +1,14 @@
 {
 	"time": [ 5 ],
 	"title": "중간고사",
-	"title_image": "EventImg7.png",
+	"title_image": "EventImg7",
 	"content": "중간고사 시즌이 돌아왔습니다. 다들 내신 점수에 대한 걱정으로 날카로운 상황입니다. 어떻게 하시겠습니까?",
 	"choices": [
 		{
 			"title": "중간 고사를 위해 야식 행사를 연다.",
 			"result": [
 				{
-					"title_image": "EventImg7E1a.png",
+					"title_image": "EventImg7E1a",
 					"content": "적절한 야식으로 학생들의 체력이 올랐습니다.",
 					"change_status": [
 						{
@@ -26,7 +26,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg7E1b.png",
+					"title_image": "EventImg7E1b",
 					"content": "야식으로 인해 비만을 조장한다는 이야기가 돕니다.",
 					"change_status": [
 						{
@@ -41,7 +41,7 @@
 			"title": "공문으로 내신의 중요성에 대해서 강조한다.",
 			"result": [
 				{
-					"title_image": "EventImg7E2a.png",
+					"title_image": "EventImg7E2a",
 					"content": "적당한 수준의 격려였습니다.",
 					"change_status": [
 						{
@@ -55,7 +55,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg7E2b.png",
+					"title_image": "EventImg7E2b",
 					"content": "좀 더 격려했어야 합니다.",
 					"change_status": [
 						{

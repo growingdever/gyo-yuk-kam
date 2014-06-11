@@ -1,14 +1,14 @@
 {
 	"time": [ 11 ],
 	"title": "급식실 담배 화재 사건",
-	"title_image": "EventImg21.png",
+	"title_image": "EventImg21",
 	"content": "학생 한명이 급식실에 숨어 담배를 피우다 화재를 일으켰습니다. 어떻게 하시겠습니까?",
 	"choices": [
 		{
 			"title": "해당 학생을 처벌하고, 금연 교육을 실시한다.",
 			"result": [
 				{
-					"title_image": "EventImg21E1a.png",
+					"title_image": "EventImg21E1a",
 					"content": "담배 피우는 학생이 줄고, 사건도 줄었습니다.",
 					"change_status": [
 						{
@@ -22,7 +22,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg21E1b.png",
+					"title_image": "EventImg21E1b",
 					"content": "미온적인 대처라고 합니다.",
 					"change_status": [
 						{
@@ -41,7 +41,7 @@
 			"title": "모든 학교 시설을 잠그고 철저히 감시토록 한다.",
 			"result": [
 				{
-					"title_image": "EventImg21E2a.png",
+					"title_image": "EventImg21E2a",
 					"content": "학부모들에게 뜨거운 반응입니다.",
 					"change_status": [
 						{
@@ -55,7 +55,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg21E2b.png",
+					"title_image": "EventImg21E2b",
 					"content": "다른 곳에서 담배를 피우고 화재를 내면 그만입니다.",
 					"change_status": [
 						{

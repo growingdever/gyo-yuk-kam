@@ -1,14 +1,14 @@
 {
 	"time": [ 3 ],
 	"title": "학교 안전사고",
-	"title_image": "EventImg3.png",
+	"title_image": "EventImg3",
 	"content": "새 학기, 바뀐 환경에 흥분한 학생들이 계단에서 넘어져 크게 다치고 말았습니다. 어떻게 하시겠습니까?",
 	"choices": [
 		{
 			"title": "안전 교육 담당 교사를 새로 배치한다.",
 			"result": [
 				{
-					"title_image": "EventImg3E1a.png",
+					"title_image": "EventImg3E1a",
 					"content": "안전사고 비율이 적어졌습니다.",
 					"change_status": [
 						{
@@ -26,7 +26,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg3E1b.png",
+					"title_image": "EventImg3E1b",
 					"content": "줄어든 일반 수업시간에 학부모가 불만을 가집니다.",
 					"change_status": [
 						{
@@ -50,7 +50,7 @@
 			"title": "각 학교별로 안전을 준수할 것을 권고한다.",
 			"result": [
 				{
-					"title_image": "EventImg3E2a.png",
+					"title_image": "EventImg3E2a",
 					"content": "꼼꼼한 일처리에 학부모들이 좋아합니다.",
 					"change_status": [
 						{
@@ -60,7 +60,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg3E2b.png",
+					"title_image": "EventImg3E2b",
 					"content": "발로 뛰지 않는 사람이라는 이미지가 생겼습니다.",
 					"change_status": [
 						{

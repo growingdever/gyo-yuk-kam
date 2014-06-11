@@ -1,14 +1,14 @@
 {
 	"time": [ 6 ],
 	"title": "체육대회",
-	"title_image": "EventImg11.png",
+	"title_image": "EventImg11",
 	"content": "이제 수능도 몇 달 남지 않은 가운데, 체육 대회가 실시되었습니다. 어떻게 하시겠습니까?",
 	"choices": [
 		{
 			"title": "체육 대회에 참가해 함께 운동을 한다.",
 			"result": [
 				{
-					"title_image": "EventImg11E1a.png",
+					"title_image": "EventImg11E1a",
 					"content": "체육 대회가 한층 더 진지해졌습니다.",
 					"change_status": [
 						{
@@ -26,7 +26,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg11E1b.png",
+					"title_image": "EventImg11E1b",
 					"content": "체육 대회에서 당신의 참여로 경기가 형식적이 되었습니다.",
 					"change_status": [
 						{
@@ -49,7 +49,7 @@
 			"title": "수능 전 다치지 않도록 안전 공문을 보낸다.",
 			"result": [
 				{
-					"title_image": "EventImg11E2a.png",
+					"title_image": "EventImg11E2a",
 					"content": "안전 공문 덕분에 사건이 줄었습니다.",
 					"change_status": [
 						{
@@ -63,7 +63,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg11E2b.png",
+					"title_image": "EventImg11E2b",
 					"content": "안전 공문은 아무런 효과가 없습니다.",
 					"change_status": [
 						{

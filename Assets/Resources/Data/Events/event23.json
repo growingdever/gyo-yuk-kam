@@ -1,14 +1,14 @@
 {
 	"time": [ 12 ],
 	"title": "고등학교 성폭행 사건",
-	"title_image": "EventImg23.png",
+	"title_image": "EventImg23",
 	"content": "남학생 한명이 여학생을 성폭행 하는 사건이 터졌습니다. 어떻게 하시겠습니까?",
 	"choices": [
 		{
 			"title": "해당 남학생을 처벌한다.",
 			"result": [
 				{
-					"title_image": "EventImg23E1a.png",
+					"title_image": "EventImg23E1a",
 					"content": "처벌을 잘 했다는 좋은 반응입니다.",
 					"change_status": [
 						{
@@ -22,7 +22,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg23E1b.png",
+					"title_image": "EventImg23E1b",
 					"content": "이래서 근본적인 해결이 되겠느냐고 합니다.",
 					"change_status": [
 						{
@@ -41,7 +41,7 @@
 			"title": "남녀 공학 철폐 발표를 한다.",
 			"result": [
 				{
-					"title_image": "EventImg23E2a.png",
+					"title_image": "EventImg23E2a",
 					"content": "근본적 해결이라는 논평입니다.",
 					"change_status": [
 						{
@@ -51,7 +51,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg23E2b.png",
+					"title_image": "EventImg23E2b",
 					"content": "사건은 계속해서 벌어졌습니다.",
 					"change_status": [
 						{

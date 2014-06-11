@@ -1,14 +1,14 @@
 {
 	"time": [ 10 ],
 	"title": "왕따 폭행 사건",
-	"title_image": "EventImg17.png",
+	"title_image": "EventImg17",
 	"content": "학생 한명이 왕따를 당하고, 가해자들에게 폭행을 당한 사건이 터졌습니다. 어떻게 하시겠습니까?",
 	"choices": [
 		{
 			"title": "가해자들을 처벌한다.",
 			"result": [
 				{
-					"title_image": "EventImg17E1a.png",
+					"title_image": "EventImg17E1a",
 					"content": "정당한 처벌이라는 반응입니다.",
 					"change_status": [
 						{
@@ -26,7 +26,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg17E1b.png",
+					"title_image": "EventImg17E1b",
 					"content": "더 본격적인 대책이 필요하다고 합니다.",
 					"change_status": [
 						{
@@ -49,7 +49,7 @@
 			"title": "왕따를 하지 말라는 내용의 교육을 한다.",
 			"result": [
 				{
-					"title_image": "EventImg17E2a.png",
+					"title_image": "EventImg17E2a",
 					"content": "교육으로 인해 왕따가 줄어들었습니다.",
 					"change_status": [
 						{
@@ -67,7 +67,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg17E2b.png",
+					"title_image": "EventImg17E2b",
 					"content": "교육은 오히려 왕따를 조장하는 결과만 낳았습니다.",
 					"change_status": [
 						{

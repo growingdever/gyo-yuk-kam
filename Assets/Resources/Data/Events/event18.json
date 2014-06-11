@@ -1,14 +1,14 @@
 {
 	"time": [ 10 ],
 	"title": "입시 스트레스 질환 발병",
-	"title_image": "EventImg18.png",
+	"title_image": "EventImg18",
 	"content": "수능을 앞두고, 입시 스트레스로 집단 히스테리 현상이 감지되었습니다. 어떻게 하시겠습니까?",
 	"choices": [
 		{
 			"title": "스트레스 감소를 위해 아침에 여유로운 음악을 틀게한다.",
 			"result": [
 				{
-					"title_image": "EventImg18E1a.png",
+					"title_image": "EventImg18E1a",
 					"content": "음악으로 인해 긴장이 많이 풀렸습니다.",
 					"change_status": [
 						{
@@ -26,7 +26,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg18E1b.png",
+					"title_image": "EventImg18E1b",
 					"content": "음악은 짜증만 유발했습니다.",
 					"change_status": [
 						{
@@ -45,7 +45,7 @@
 			"title": "해당 학급의 정신과 진료를 받게 한다.",
 			"result": [
 				{
-					"title_image": "EventImg18E2a.png",
+					"title_image": "EventImg18E2a",
 					"content": "실제로 전문가의 도움이 크게 효과적이었습니다.",
 					"change_status": [
 						{
@@ -63,7 +63,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg18E2b.png",
+					"title_image": "EventImg18E2b",
 					"content": "정신병자 취급을 받는것 같다고 합니다.",
 					"change_status": [
 						{

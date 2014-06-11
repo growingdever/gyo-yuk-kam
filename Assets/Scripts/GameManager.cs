@@ -158,7 +158,7 @@ public class GameManager : MonoBehaviour {
 					GameObject dialog = NGUITools.AddChild( _uiRoot, _eventDialogPrefab );
 					_currentEventDialog = dialog;
 					
-					DialogController dialogController = _currentEventDialog.GetComponent<DialogController>();
+					EventDialogController dialogController = _currentEventDialog.GetComponent<EventDialogController>();
 					dialogController.InGameEvent = _eventManager.GetEventByMonth( CalculatedMonth() );
 
 					while(true) {

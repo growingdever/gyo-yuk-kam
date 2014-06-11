@@ -1,14 +1,14 @@
 {
 	"time": [ 4 ],
 	"title": "진로 탐색 체험",
-	"title_image": "EventImg6.png",
+	"title_image": "EventImg6",
 	"content": "진로 탐색 체험으로 학교가 부산합니다. 교육감으로서 학생들의 점수를 딸 기회입니다. 어떻게 하시겠습니까?",
 	"choices": [
 		{
 			"title": "진로 탐색 행사에 참여한다.",
 			"result": [
 				{
-					"title_image": "EventImg6E1a.png",
+					"title_image": "EventImg6E1a",
 					"content": "학부모,  학생 모두 관심있는 교육감이라는 평가입니다.",
 					"change_status": [
 						{
@@ -26,7 +26,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg6E1b.png",
+					"title_image": "EventImg6E1b",
 					"content": "교육감의 참여가 오히려 행사를 형식적으로 만들었습니다.",
 					"change_status": [
 						{
@@ -49,7 +49,7 @@
 			"title": "조용히 넘어간다.",
 			"result": [
 				{
-					"title_image": "EventImg6E2a.png",
+					"title_image": "EventImg6E2a",
 					"content": "눈치 빠른 교육감이라는 평가입니다.",
 					"change_status": [
 						{
@@ -63,7 +63,7 @@
 					]
 				},
 				{
-					"title_image": "EventImg6E2b.png",
+					"title_image": "EventImg6E2b",
 					"content": "학생들에게 관심 없는 교육감이라는 평가입니다.",
 					"change_status": [
 						{

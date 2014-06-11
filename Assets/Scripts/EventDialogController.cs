@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DialogController : MonoBehaviour {
-
-	public GameObject _target;
-	public GameObject _image;
-	public GameObject _title;
-	public GameObject _content;
+public class EventDialogController : MonoBehaviour {
+	
+	public UITexture _image;
+	public UILabel _title;
+	public UILabel _content;
 	public GameObject _choice1;
 	public GameObject _choice2;
 
@@ -35,8 +34,12 @@ public class DialogController : MonoBehaviour {
 		NGUITools.SetActive( _choice1, false );
 		NGUITools.SetActive( _choice2, false );
 
-		MyNGUITool.SetLabelText (_title, _eventData.Title);
-		MyNGUITool.SetLabelText (_content, _eventData.Content);
+		_title.text = _eventData.Title;
+		_content.text = _eventData.Content;
+
+		string path = "Data/Events/EventIMGs/" + _eventData.TitleImagePath;
+		Texture tex = Resources.Load(path) as Texture;
+		_image.mainTexture = tex;
 	}
 	
 	// Update is called once per frame
@@ -45,7 +48,7 @@ public class DialogController : MonoBehaviour {
 	}
 
 	public void OnClick() {
-		if( NGUITools.GetActive( _content ) == true ) {
+		if( _content.enabled == true ) {
 			ShowChoice();
 		}
 	}
@@ -56,11 +59,11 @@ public class DialogController : MonoBehaviour {
 
 	public void ShowChoice() {
 		if (_selectedChoice != null) {
-			Destroy( _target );
+			Destroy( gameObject );
 			_isClosed = true;
 		}
 
-		NGUITools.SetActive( _content, false );
+		_content.enabled = false;
 
 		NGUITools.SetActive( _choice1, true );
 		NGUITools.SetActive( _choice2, true );
@@ -84,12 +87,15 @@ public class DialogController : MonoBehaviour {
 	void UpdateDialogStateResult() {
 		NGUITools.SetActive (_choice1, false);
 		NGUITools.SetActive (_choice2, false);
-		NGUITools.SetActive (_content, true);
+		_content.enabled = true;
 
 		EventManager.Result result = _selectedChoice.Result[Random.Range(0, _selectedChoice.Result.Length)];
-		MyNGUITool.SetLabelText (_title, _selectedChoice.Title);
-		MyNGUITool.SetLabelText (_content, result.ResultContent);
+		_title.text = _selectedChoice.Title;
+		_content.text = result.ResultContent;
 
+		string path = "Data/Events/EventIMGs/" + result.ResultImagePath;
+		Texture tex = Resources.Load(path) as Texture;
+		_image.mainTexture = tex;
 
 		// send selected choice to manager
 	}
