@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ScheduleDialogControlManager : MonoBehaviour, ButtonReceiver {
+public class ScheduleDialogController : MonoBehaviour, ButtonReceiver {
 
 	public UIPanel _unSelectedList;
 	public GameObject _labelButtonPrefab;
@@ -11,10 +11,6 @@ public class ScheduleDialogControlManager : MonoBehaviour, ButtonReceiver {
 	ScheduleManager.Schedule _prevSelectedSchedule;
 
 	GameObject[] _quaterNode;
-
-	public ScheduleDialogControlManager() {
-
-	}
 
 	// Use this for initialization
 	void Start () {

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-public class StrategyDialogControlManager : MonoBehaviour, ButtonReceiver {
+public class StrategyDialogController : MonoBehaviour, ButtonReceiver {
 
 	public UIPanel _unSelectedList;
 	public UIPanel _selectedList;
