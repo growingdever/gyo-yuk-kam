@@ -62,10 +62,10 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		_currMonth = 1;
+		_currMonth = 3;
 
-		_calendarMonth.text = _currMonth + "";
-		_calendarDay.text = 1 + "";
+		_calendarMonth.text = CalculatedMonth() + "";
+		_calendarDay.text = "1";
 
 		_player = new Player();
 		_eventManager = new EventManager ();
@@ -89,19 +89,25 @@ public class GameManager : MonoBehaviour {
 		_gaugeSpecialty.value = (float)(_player.GetStatus().Specialty / Player.Status.Max);
 		_gaugeStress.value = (float)(_player.GetStatus().Stress / Player.Status.Max);
 	}
+
+	int CalculatedMonth() {
+		if( _currMonth % MonthPerYear == 0 )
+			return MonthPerYear;
+		return _currMonth % MonthPerYear;
+	}
 	
 	public void OnClickNextMonth() {
-		int month = _currMonth % MonthPerYear;
+		int month = CalculatedMonth();
 		if( month == 3 || month == 9 ) {
 			_mainButton1.enabled = false;
 			_mainButton2.enabled = false;
 			_mainButton3.enabled = false;
 		}
 
-		StartCoroutine ( "NextMonth", 0.05f );
+		StartCoroutine ( "NextMonth", 0.02f );
 	}
 	public IEnumerator NextMonth(float delay) {
-		int totalDay = DayOfMonth[_currMonth % MonthPerYear - 1];
+		int totalDay = DayOfMonth[CalculatedMonth() - 1];
 		int eventDay = Random.Range( 1, totalDay + 1 );
 
 		int[] endOfAnimationDay = new int[5];
@@ -138,12 +144,12 @@ public class GameManager : MonoBehaviour {
 				if( _skipEventFlag )
 					continue;
 
-				if( _eventManager.IsExistEvenyByMonth( _currMonth ) ) {
+				if( _eventManager.IsExistEvenyByMonth( CalculatedMonth() ) ) {
 					GameObject dialog = NGUITools.AddChild( _uiRoot, _eventDialogPrefab );
 					_currentEventDialog = dialog;
 					
 					DialogController dialogController = _currentEventDialog.GetComponent<DialogController>();
-					dialogController.InGameEvent = _eventManager.GetEventByMonth( _currMonth );
+					dialogController.InGameEvent = _eventManager.GetEventByMonth( CalculatedMonth() );
 
 					while(true) {
 						if( dialogController.Closed ) break;
@@ -157,32 +163,53 @@ public class GameManager : MonoBehaviour {
 		}
 
 		_currMonth++;
-		int month = _currMonth % MonthPerYear;
+		int month = CalculatedMonth();
 
-		// calculate status
+		// if semester is ended, add month more
 		if( month == 7 || month == 1 ) {
-			_currMonth += 2;
-
-			// change status
-			ArrayList deltaList;
-			deltaList = _strategyManager.GetDeltaArray();
-			for( int i = 0; i < deltaList.Count; i ++ ) {
-				DeltaStatus delta = deltaList[i] as DeltaStatus;
-				_player.GetStatus().ChangeStatus( delta );
+			while( true ) {
+				int tmp = CalculatedMonth();
+				if( tmp == 9 || tmp == 3 )
+                    break;
+                _currMonth++;
 			}
-			_strategyManager.ClearSelected();
-
-			UpdateGauge();
 		}
 
-		// activate ui
-		if (month == 7) {
+		month = CalculatedMonth();
+
+		// semester is ended!
+		if( month == 3 || month == 9 ) {
+			// change status
+			do {
+				ArrayList deltaList;
+
+				// change by schedule
+
+				// 1 year has passed
+				if( month == 3 ) {
+					// change by strategy
+					deltaList = _strategyManager.GetDeltaArray();
+					for( int i = 0; i < deltaList.Count; i ++ ) {
+						DeltaStatus delta = deltaList[i] as DeltaStatus;
+						_player.GetStatus().ChangeStatus( delta );
+					}
+                    _strategyManager.ClearSelected();
+                    
+                    // change by budget
+                }
+                
+                UpdateGauge();
+			} while( false );
+
+			// activate and update ui
+			month = CalculatedMonth();
 			_mainButton1.enabled = true;
+			if( month == 3 ) {
+				_mainButton2.enabled = true;
+            	_mainButton3.enabled = true;
+			}
 		}
 
-
-		_calendarMonth.text = month + "";
-		_calendarDay.text = 1 + "";
 
 		// initialize background for next month
 		_backSkyDay.transform.localPosition = new Vector3 (-1092, 223, 0);
@@ -191,6 +218,10 @@ public class GameManager : MonoBehaviour {
 		TweenAlpha.Begin (_backSkySunset, 0.01f, 1.0f);
 		_backSkyNight.transform.localPosition = new Vector3 (-1092, 223, 0);
 		TweenAlpha.Begin (_backSkyNight, 0.01f, 1.0f);
+
+		// update calender ui
+		_calendarMonth.text = CalculatedMonth() + "";
+		_calendarDay.text = "1";
 	}
 
 	public void OnClickBudget() {
