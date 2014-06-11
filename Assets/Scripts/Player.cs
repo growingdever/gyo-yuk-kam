@@ -7,14 +7,6 @@ public class Player {
 
 	public Player() {
 		_status = new Status();
-
-		_status.SatisfactionParent = 5;
-		_status.SatisfactionStudent = 5;
-		_status.Int = 3;
-		_status.Stamina = 3;
-		_status.Morality = 3;
-		_status.Specialty = 3;
-		_status.Stress = 3;
 	}
 
 	public Status GetStatus() {
@@ -27,43 +19,46 @@ public class Player {
 		double _satisfactionStudent;
 		public double SatisfactionStudent { 
 			get { return _satisfactionStudent; } 
-			set { _satisfactionStudent = value; }
 		}
 
 		double _satisfactionParent;
 		public double SatisfactionParent { 
 			get { return _satisfactionParent; } 
-			set { _satisfactionParent = value; }
 		}
 
 		double _intelligence;
 		public double Int { 
 			get { return _intelligence; } 
-			set { _intelligence = value; }
 		}
 
 		double _stamina;
 		public double Stamina { 
 			get { return _stamina; } 
-			set { _stamina = value; }
 		}
 
 		double _morality;
 		public double Morality { 
 			get { return _morality; } 
-			set { _morality = value; }
 		}
 
 		double _specialty;
 		public double Specialty { 
 			get { return _specialty; } 
-			set { _specialty = value; }
 		}
 
 		double _stress;
 		public double Stress { 
 			get { return _stress; } 
-			set { _stress = value; }
+		}
+
+		public Status() {
+			_satisfactionParent = 5;
+			_satisfactionStudent = 5;
+			_intelligence = 3;
+			_stamina = 3;
+			_morality = 3;
+            _specialty = 3;
+            _stress = 3;
 		}
 
 		// this function will cause performance degradation because too many compare string
@@ -93,6 +88,27 @@ public class Player {
 				_stress += delta.Delta;
 				break;
 			}
+
+			if( _satisfactionParent > Max ) _satisfactionParent = Max;
+			else if( _satisfactionParent < 0 ) _satisfactionParent = 0;
+
+			if( _satisfactionStudent > Max ) _satisfactionStudent = Max;
+			else if( _satisfactionStudent < 0 ) _satisfactionStudent = 0;
+
+			if( _intelligence > Max ) _intelligence = Max;
+			else if( _intelligence < 0 ) _intelligence = 0;
+
+			if( _stamina > Max ) _stamina = Max;
+			else if( _stamina < 0 ) _stamina = 0;
+
+			if( _morality > Max ) _morality = Max;
+			else if( _morality < 0 ) _morality = 0;
+
+			if( _specialty > Max ) _specialty = Max;
+			else if( _specialty < 0 ) _specialty = 0;
+
+			if( _stress > Max ) _stress = Max;
+			else if( _stress < 0 ) _stress = 0;
 		}
 
 		public static string GetStatusString(int type) {
