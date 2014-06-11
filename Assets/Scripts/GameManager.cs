@@ -94,13 +94,17 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void UpdateGauge() {
-		_gaugeSatisfactionParent.value = (float)(_player.GetStatus().SatisfactionParent / Player.Status.Max);
-		_gaugeSatisfactionStudent.value = (float)(_player.GetStatus().SatisfactionStudent / Player.Status.Max);
-		_gaugeIntelligence.value = (float)(_player.GetStatus().Int / Player.Status.Max);
-		_gaugeStamina.value = (float)(_player.GetStatus().Stamina / Player.Status.Max);
-		_gaugeMorality.value = (float)(_player.GetStatus().Morality / Player.Status.Max);
-		_gaugeSpecialty.value = (float)(_player.GetStatus().Specialty / Player.Status.Max);
-		_gaugeStress.value = (float)(_player.GetStatus().Stress / Player.Status.Max);
+		for (int i = 0; i < Player.Status.IndexTotal; i ++) {
+			Debug.Log("" + _player.GetStatus()._variableArray[i]);
+		}
+
+		_gaugeSatisfactionParent.value = _player.GetStatus().GetRatio(Player.Status.IndexSatisfactionParent);
+		_gaugeSatisfactionStudent.value = _player.GetStatus().GetRatio(Player.Status.IndexSatisfactionStudent);
+		_gaugeIntelligence.value = _player.GetStatus().GetRatio(Player.Status.IndexIntelligence);
+		_gaugeStamina.value = _player.GetStatus().GetRatio(Player.Status.IndexStamina);
+		_gaugeMorality.value = _player.GetStatus().GetRatio(Player.Status.IndexMorality);
+		_gaugeSpecialty.value = _player.GetStatus().GetRatio(Player.Status.IndexSpecialty);
+		_gaugeStress.value = _player.GetStatus().GetRatio(Player.Status.IndexStress);
 	}
 
 	int CalculatedMonth() {
@@ -168,6 +172,9 @@ public class GameManager : MonoBehaviour {
 						if( dialogController.Closed ) break;
 						yield return 0;
 					}
+
+					dialogController.UpdatePlayerStatus( _player );
+					UpdateGauge();
 				}
 			}
 
@@ -238,7 +245,7 @@ public class GameManager : MonoBehaviour {
 			double needMoreSatisfaction = (numOfTerm - 1) * 1;
 
 			GameObject prefab;
-			if( _player.GetStatus().SatisfactionParent >= 6 + needMoreSatisfaction ) {
+			if( _player.GetStatus()._variableArray[ Player.Status.IndexSatisfactionParent ] >= 6 + needMoreSatisfaction ) {
 				prefab = Resources.Load("DialogYeonimSuccess") as GameObject;
 			} else {
 				prefab = Resources.Load("DialogYeonimFail") as GameObject;

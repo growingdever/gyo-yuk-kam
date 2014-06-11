@@ -67,7 +67,7 @@ public class BudgetManager {
 		}
 
 		for( int i = 0; i < deltaArr.Length; i ++ ) {
-			DeltaStatus delta = new DeltaStatus( Player.Status.GetStatusString(i), deltaArr[i] );
+			DeltaStatus delta = new DeltaStatus( i, deltaArr[i] );
 			list.Add( delta );
 		}
         

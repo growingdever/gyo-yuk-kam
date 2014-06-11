@@ -19,6 +19,12 @@ public class EventDialogController : MonoBehaviour {
 		}
 	}
 	private EventManager.Choice _selectedChoice;
+	EventManager.Result _result;
+	public EventManager.Result Result {
+		get {
+			return _result;
+		}
+	}
 
 	bool _isClosed;
 	public bool Closed {
@@ -92,11 +98,17 @@ public class EventDialogController : MonoBehaviour {
 		EventManager.Result result = _selectedChoice.Result[Random.Range(0, _selectedChoice.Result.Length)];
 		_title.text = _selectedChoice.Title;
 		_content.text = result.ResultContent;
+		_result = result;
 
 		string path = "Data/Events/EventIMGs/" + result.ResultImagePath;
 		Texture tex = Resources.Load(path) as Texture;
 		_image.mainTexture = tex;
+	}
 
-		// send selected choice to manager
+	public void UpdatePlayerStatus(Player player) {
+		DeltaStatus[] deltaArray = _result.DeltaStatus;
+		for (int i = 0; i < deltaArray.Length; i ++) {
+			player.GetStatus().ChangeStatus( deltaArray[i] );
+		}
 	}
 }
