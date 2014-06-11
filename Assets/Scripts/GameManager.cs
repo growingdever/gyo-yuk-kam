@@ -234,8 +234,11 @@ public class GameManager : MonoBehaviour {
 
 		// if passed incumbency years, check satisfaction of parent for next term
 		if( _passedSemester > 0 && _passedSemester % (IncumbencyYear * 2) == 0 ) {
+			int numOfTerm = _passedSemester / (IncumbencyYear * 2);
+			double needMoreSatisfaction = (numOfTerm - 1) * 1;
+
 			GameObject prefab;
-			if( _player.GetStatus().SatisfactionParent >= 6 ) {
+			if( _player.GetStatus().SatisfactionParent >= 6 + needMoreSatisfaction ) {
 				prefab = Resources.Load("DialogYeonimSuccess") as GameObject;
 			} else {
 				prefab = Resources.Load("DialogYeonimFail") as GameObject;
