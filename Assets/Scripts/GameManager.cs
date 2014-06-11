@@ -206,6 +206,12 @@ public class GameManager : MonoBehaviour {
                     _strategyManager.ClearSelected();
                     
                     // change by budget
+					deltaList = _budgetManager.GetDeltaArray();
+					for( int i = 0; i < deltaList.Count; i ++ ) {
+						DeltaStatus delta = deltaList[i] as DeltaStatus;
+						_player.GetStatus().ChangeStatus( delta );
+					}
+                    _budgetManager.InitPoints();
                 }
                 
                 UpdateGauge();
