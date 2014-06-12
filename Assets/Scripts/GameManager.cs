@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour {
 	public int IncumbencyYear;
 	int _passedSemester;
 
+	public float NextMonthSpeed;
+
 	private Player _player;
 	public Player Player {
 		get {
@@ -131,7 +133,7 @@ public class GameManager : MonoBehaviour {
 			_mainButton3.enabled = false;
 		}
 
-		StartCoroutine ( "NextMonth", 0.002f );
+		StartCoroutine ( "NextMonth", NextMonthSpeed / 30.0f );
 	}
 	public IEnumerator NextMonth(float delay) {
 		int totalDay = DayOfMonth[CalculatedMonth() - 1];
