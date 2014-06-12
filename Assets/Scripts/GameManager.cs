@@ -5,6 +5,7 @@ using System.Linq;
 
 public class GameManager : MonoBehaviour {
 
+	public bool _skipEventFlag;
 	public const int MonthPerYear = 12;
 	public int _startYear;
 	public int _currMonth;
@@ -72,7 +73,6 @@ public class GameManager : MonoBehaviour {
 	
 	public GameObject _eventDialogPrefab;
 	private GameObject _currentEventDialog;
-	public bool _skipEventFlag;
 
 	public GameObject _budgetPrefab;
 	public GameObject _strategyPrefab;
@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		_currMonth = 3;
+//		_currMonth = 3;
 
 		_calendarMonth.text = CalculatedMonth() + "";
 		_calendarDay.text = "1";
@@ -163,6 +163,10 @@ public class GameManager : MonoBehaviour {
 
 		month = CalculatedMonth();
 
+		// update calender ui
+		_calendarMonth.text = month + "";
+		_calendarDay.text = "1";
+
 		// semester is ended!
 		if( month == 3 || month == 9 ) {
 			_passedSemester++;
@@ -214,16 +218,15 @@ public class GameManager : MonoBehaviour {
 
 			double needMoreSatisfaction = (numOfTerm - 1) * 1;
 
-			GameObject prefab;
-			if( _player.GetStatus()._variableArray[ Player.Status.IndexSatisfactionParent ] >= 0 + needMoreSatisfaction ) {
-				prefab = Resources.Load("DialogYeonimSuccess") as GameObject;
+			YeonimDialogController controller;
+			if( _player.GetStatus()._variableArray[ Player.Status.IndexSatisfactionParent ] >= 6 + needMoreSatisfaction ) {
+				controller = YeonimDialogController.BuildSuccess( _uiRoot );
 			} else {
-				prefab = Resources.Load("DialogYeonimFail") as GameObject;
+				controller = YeonimDialogController.BuildFail( _uiRoot );
 			}
+			yield return StartCoroutine(controller.Show());
 
-			NGUITools.AddChild( _uiRoot, prefab );
 			_yeonimCounterLabel.text = "" + numOfTerm;
-
 			_prevCheckedSemester = _passedSemester;
 		}
 
@@ -242,10 +245,6 @@ public class GameManager : MonoBehaviour {
 		TweenAlpha.Begin (_backSkySunset, 0.01f, 1.0f);
 		_backSkyNight.transform.localPosition = new Vector3 (-1092, 223, 0);
 		TweenAlpha.Begin (_backSkyNight, 0.01f, 1.0f);
-
-		// update calender ui
-		_calendarMonth.text = CalculatedMonth() + "";
-		_calendarDay.text = "1";
 	}
 
 	IEnumerator PassingTime(float delay) {
