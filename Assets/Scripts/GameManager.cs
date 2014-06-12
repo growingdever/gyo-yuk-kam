@@ -9,8 +9,10 @@ public class GameManager : MonoBehaviour {
 	public int _startYear;
 	public int _currMonth;
 
+	public int NumberOfTerm;
 	public int IncumbencyYear;
 	int _passedSemester;
+	int _prevCheckedSemester;
 
 	public float NextMonthSpeed;
 
@@ -66,6 +68,7 @@ public class GameManager : MonoBehaviour {
 	public UISlider _gaugeMorality;
 	public UISlider _gaugeSpecialty;
 	public UISlider _gaugeStress;
+	UILabel _yeonimCounterLabel;
 	
 	public GameObject _eventDialogPrefab;
 	private GameObject _currentEventDialog;
@@ -93,6 +96,10 @@ public class GameManager : MonoBehaviour {
 
 		_calendarMonth.text = CalculatedMonth() + "";
 		_calendarDay.text = "1";
+
+		GameObject yeonimUI = GameObject.Find ("Yeonim-num-label") as GameObject;
+		_yeonimCounterLabel = yeonimUI.GetComponent<UILabel> ();
+		_yeonimCounterLabel.text = "0";
 
 		_player = new Player();
 		_eventManager = new EventManager ();
@@ -253,18 +260,25 @@ public class GameManager : MonoBehaviour {
 
 
 		// if passed incumbency years, check satisfaction of parent for next term
-		if( _passedSemester > 0 && _passedSemester % (IncumbencyYear * 2) == 0 ) {
+		if( _passedSemester != _prevCheckedSemester && _passedSemester % (IncumbencyYear * 2) == 0 ) {
 			int numOfTerm = _passedSemester / (IncumbencyYear * 2);
+			if( numOfTerm == NumberOfTerm ) {
+				Application.LoadLevel(2);
+			}
+
 			double needMoreSatisfaction = (numOfTerm - 1) * 1;
 
 			GameObject prefab;
-			if( _player.GetStatus()._variableArray[ Player.Status.IndexSatisfactionParent ] >= 6 + needMoreSatisfaction ) {
+			if( _player.GetStatus()._variableArray[ Player.Status.IndexSatisfactionParent ] >= 0 + needMoreSatisfaction ) {
 				prefab = Resources.Load("DialogYeonimSuccess") as GameObject;
 			} else {
 				prefab = Resources.Load("DialogYeonimFail") as GameObject;
 			}
 
 			NGUITools.AddChild( _uiRoot, prefab );
+			_yeonimCounterLabel.text = "" + numOfTerm;
+
+			_prevCheckedSemester = _passedSemester;
 		}
 
 
