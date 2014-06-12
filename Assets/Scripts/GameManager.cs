@@ -264,7 +264,7 @@ public class GameManager : MonoBehaviour {
 		ArrayList newsList = _newsManager.GetSuitableNews (_player.GetStatus ()._variableArray);
 		if (newsList.Count > 0) {
 			NewsManager.News news = (NewsManager.News)newsList[ Random.Range( 0, newsList.Count ) ];
-
+			yield return StartCoroutine( NewsDialogController.Build(_uiRoot, news).Show () );
 		}
 
 
@@ -294,11 +294,6 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void OnClickPresentCondition() {
-		StartCoroutine( ShowDialog () );
-	}
 
-	IEnumerator ShowDialog() {
-		NewsManager.News news = (NewsManager.News)_newsManager.NewsDataList [0];
-		yield return StartCoroutine( NewsDialogController.Build(_uiRoot, news.ImagePath).Show () );
 	}
 }

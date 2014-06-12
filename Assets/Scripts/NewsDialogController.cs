@@ -17,12 +17,12 @@ public class NewsDialogController : MonoBehaviour {
 	
 	}
 
-	public static NewsDialogController Build (GameObject parent, string image) {
+	public static NewsDialogController Build (GameObject parent, NewsManager.News news) {
 		GameObject prefab = Resources.Load ("DialogNews") as GameObject;
 		GameObject clone = NGUITools.AddChild (parent, prefab);
 
 		NewsDialogController controller = clone.GetComponent<NewsDialogController> ();
-		controller._image.mainTexture = Resources.Load ("Data/News/Newspaper/" + image) as Texture;
+		controller._image.mainTexture = Resources.Load ("Data/News/Newspaper/" + news.ImagePath) as Texture;
 		return controller;
 	}
 
