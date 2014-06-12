@@ -234,7 +234,7 @@ public class GameManager : MonoBehaviour {
 		// show news
 		ArrayList newsList = _newsManager.GetSuitableNewsIndex (_player.GetStatus ()._variableArray);
 		if (newsList.Count > 0) {
-			StartCoroutine( "ShowNews", Random.Range( 1, newsList.Count ) );
+			yield return StartCoroutine( "ShowNews", Random.Range( 1, newsList.Count ) );
 		}
 
 
