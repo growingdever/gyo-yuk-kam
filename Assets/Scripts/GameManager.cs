@@ -36,6 +36,13 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+	private NewsManager _newsManager;
+	public NewsManager NewsManager {
+		get {
+			return _newsManager;
+		}
+	}
+
 	public GameObject _uiRoot;
 	public UIButton _mainButton1;
 	public UIButton _mainButton2;
@@ -84,6 +91,7 @@ public class GameManager : MonoBehaviour {
 		_scheduleManager = new ScheduleManager();
 		_strategyManager = new StrategyManager();
 		_budgetManager = new BudgetManager();
+		_newsManager = new NewsManager ();
 
 		UpdateGauge();
 	}
@@ -94,10 +102,6 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void UpdateGauge() {
-		for (int i = 0; i < Player.Status.IndexTotal; i ++) {
-			Debug.Log("" + _player.GetStatus()._variableArray[i]);
-		}
-
 		_gaugeSatisfactionParent.value = _player.GetStatus().GetRatio(Player.Status.IndexSatisfactionParent);
 		_gaugeSatisfactionStudent.value = _player.GetStatus().GetRatio(Player.Status.IndexSatisfactionStudent);
 		_gaugeIntelligence.value = _player.GetStatus().GetRatio(Player.Status.IndexIntelligence);
@@ -182,6 +186,7 @@ public class GameManager : MonoBehaviour {
 			yield return new WaitForSeconds( delay );
 		}
 
+
 		_currMonth++;
 		int month = CalculatedMonth();
 
@@ -255,6 +260,14 @@ public class GameManager : MonoBehaviour {
 		}
 
 
+		// show news
+		ArrayList newsList = _newsManager.GetSuitableNews (_player.GetStatus ()._variableArray);
+		if (newsList.Count > 0) {
+			NewsManager.News news = (NewsManager.News)newsList[ Random.Range( 0, newsList.Count ) ];
+
+		}
+
+
 		// initialize background for next month
 		_backSkyDay.transform.localPosition = new Vector3 (-1092, 223, 0);
 		TweenAlpha.Begin (_backSkyDay, 0.01f, 1.0f);
@@ -278,5 +291,14 @@ public class GameManager : MonoBehaviour {
 
 	public void OnClickSchedule() {
 		NGUITools.AddChild (_uiRoot, _schedulePrefab);
+	}
+
+	public void OnClickPresentCondition() {
+		StartCoroutine( ShowDialog () );
+	}
+
+	IEnumerator ShowDialog() {
+		NewsManager.News news = (NewsManager.News)_newsManager.NewsDataList [0];
+		yield return StartCoroutine( NewsDialogController.Build(_uiRoot, news.ImagePath).Show () );
 	}
 }
