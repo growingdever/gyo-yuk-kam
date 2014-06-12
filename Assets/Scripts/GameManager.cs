@@ -145,64 +145,8 @@ public class GameManager : MonoBehaviour {
 		StartCoroutine ( "NextMonth", NextMonthSpeed / 30.0f );
 	}
 	public IEnumerator NextMonth(float delay) {
-		int totalDay = DayOfMonth[CalculatedMonth() - 1];
-		int eventDay = Random.Range( 1, totalDay + 1 );
 
-		int[] endOfAnimationDay = new int[5];
-		endOfAnimationDay [0] = 1;
-		endOfAnimationDay [1] = (totalDay / 3) * 1;
-		endOfAnimationDay [2] = (totalDay / 3) * 2;
-		endOfAnimationDay [3] = (totalDay / 3) * 3;
-		endOfAnimationDay [4] = totalDay;
-		int currAnimation = 0;
-
-		for( int i = 1; i <= totalDay; i ++ ) {
-			if( i == endOfAnimationDay[ currAnimation ] && currAnimation <= 2 ) {
-				int diff = endOfAnimationDay[ currAnimation + 1 ] - endOfAnimationDay[ currAnimation ];
-				float duration = diff * delay;
-
-				if( currAnimation == 0 ) {
-					TweenAlpha.Begin (_backSkyDay, duration, 0);
-					iTween.MoveTo (_backSkyDay, iTween.Hash ("X", 2, 
-						"time", duration));
-				} else if( currAnimation == 1 ) {
-					TweenAlpha.Begin (_backSkySunset, duration, 0);
-					iTween.MoveTo (_backSkySunset, iTween.Hash ("X", 2, 
-						"time", duration));
-				} else if( currAnimation == 2 ) {
-					TweenAlpha.Begin (_backSkyNight, duration, 0);
-					iTween.MoveTo (_backSkyNight, iTween.Hash ("X", 2, 
-						"time", duration));
-				}
-
-				currAnimation++;
-			}
-
-			if( i == eventDay ) {
-				if( _skipEventFlag )
-					continue;
-
-				if( _eventManager.IsExistEvenyByMonth( CalculatedMonth() ) ) {
-					GameObject dialog = NGUITools.AddChild( _uiRoot, _eventDialogPrefab );
-					_currentEventDialog = dialog;
-					
-					EventDialogController dialogController = _currentEventDialog.GetComponent<EventDialogController>();
-					dialogController.InGameEvent = _eventManager.GetEventByMonth( CalculatedMonth() );
-
-					while(true) {
-						if( dialogController.Closed ) break;
-						yield return 0;
-					}
-
-					dialogController.UpdatePlayerStatus( _player );
-					UpdateGauge();
-				}
-			}
-
-			_calendarDay.text = i + "";
-			yield return new WaitForSeconds( delay );
-		}
-
+		yield return StartCoroutine ( "PassingTime", delay );
 
 		_currMonth++;
 		int month = CalculatedMonth();
@@ -304,7 +248,67 @@ public class GameManager : MonoBehaviour {
 		_calendarDay.text = "1";
 	}
 
-	IEnumerator ShowNews(int index) {
+	IEnumerator PassingTime(float delay) {
+		int totalDay = DayOfMonth[CalculatedMonth() - 1];
+		int eventDay = Random.Range( 1, totalDay + 1 );
+		
+		int[] endOfAnimationDay = new int[5];
+		endOfAnimationDay [0] = 1;
+		endOfAnimationDay [1] = (totalDay / 3) * 1;
+		endOfAnimationDay [2] = (totalDay / 3) * 2;
+		endOfAnimationDay [3] = (totalDay / 3) * 3;
+		endOfAnimationDay [4] = totalDay;
+		int currAnimation = 0;
+		
+		for( int i = 1; i <= totalDay; i ++ ) {
+			if( i == endOfAnimationDay[ currAnimation ] && currAnimation <= 2 ) {
+				int diff = endOfAnimationDay[ currAnimation + 1 ] - endOfAnimationDay[ currAnimation ];
+				float duration = diff * delay;
+				
+				if( currAnimation == 0 ) {
+					TweenAlpha.Begin (_backSkyDay, duration, 0);
+					iTween.MoveTo (_backSkyDay, iTween.Hash ("X", 2, 
+					                                         "time", duration));
+				} else if( currAnimation == 1 ) {
+					TweenAlpha.Begin (_backSkySunset, duration, 0);
+					iTween.MoveTo (_backSkySunset, iTween.Hash ("X", 2, 
+					                                            "time", duration));
+				} else if( currAnimation == 2 ) {
+					TweenAlpha.Begin (_backSkyNight, duration, 0);
+					iTween.MoveTo (_backSkyNight, iTween.Hash ("X", 2, 
+					                                           "time", duration));
+				}
+				
+				currAnimation++;
+			}
+			
+			if( i == eventDay ) {
+				if( _skipEventFlag )
+					continue;
+				
+				if( _eventManager.IsExistEvenyByMonth( CalculatedMonth() ) ) {
+					GameObject dialog = NGUITools.AddChild( _uiRoot, _eventDialogPrefab );
+					_currentEventDialog = dialog;
+					
+					EventDialogController dialogController = _currentEventDialog.GetComponent<EventDialogController>();
+					dialogController.InGameEvent = _eventManager.GetEventByMonth( CalculatedMonth() );
+					
+					while(true) {
+						if( dialogController.Closed ) break;
+						yield return 0;
+					}
+					
+					dialogController.UpdatePlayerStatus( _player );
+					UpdateGauge();
+				}
+			}
+			
+			_calendarDay.text = i + "";
+			yield return new WaitForSeconds( delay );
+		}
+	}
+
+	IEnumerator ShowNews(int index) {	
 		NewsManager.News news = (NewsManager.News)_newsManager.NewsDataList[index];
 		yield return StartCoroutine( NewsDialogController.Build(_uiRoot, news).Show () );
 	}
