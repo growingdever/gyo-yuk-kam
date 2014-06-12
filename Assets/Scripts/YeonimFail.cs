@@ -15,5 +15,6 @@ public class YeonimFail : MonoBehaviour {
 
 	public void OnClickButtonExit() {
 		// go to title scene
+		Application.LoadLevel (0);
 	}
 }
