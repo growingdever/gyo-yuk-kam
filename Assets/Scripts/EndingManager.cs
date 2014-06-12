@@ -52,7 +52,7 @@ public class EndingManager : MonoBehaviour {
 			int i;
 			for( i = 0; i < conditions.Length; i ++ ) {
 				Condition cond = conditions[i];
-				if( statusArray[cond.Target] > cond.Value != cond.Cond ) {
+				if( statusArray[cond.Target] >= cond.Value != cond.Cond ) {
 					break;
 				}
 			}
