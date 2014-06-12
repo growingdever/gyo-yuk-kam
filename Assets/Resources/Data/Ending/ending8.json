@@ -1,0 +1,31 @@
+{
+	"image": "Ending8",
+	"description": "당신은 세종대왕의 현신 같습니다. 대체 뭘 어떻게 한 건가요? 감사합니다.",
+	"conditions": [
+		{
+			"target": 0,
+			"value": 9,
+			"condition": true
+		},
+		{
+			"target": 2,
+			"value": 9,
+			"condition": true
+		},
+		{
+			"target": 3,
+			"value": 9,
+			"condition": true
+		},
+		{
+			"target": 4,
+			"value": 9,
+			"condition": true
+		},
+		{
+			"target": 5,
+			"value": 9,
+			"condition": true
+		}
+	]
+}

@@ -1,0 +1,16 @@
+{
+	"image": "Ending7",
+	"description": "비록 뇌까지 근육이 되었지만, 한국은 올림픽에서 금이란 금은 다 쓸어오는 국가가 되었습니다. 대단하군요.",
+	"conditions": [
+		{
+			"target": 0,
+			"value": 5,
+			"condition": true
+		},
+		{
+			"target": 3,
+			"value": 9,
+			"condition": true
+		}
+	]
+}

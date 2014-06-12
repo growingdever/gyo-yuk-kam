@@ -1,0 +1,36 @@
+{
+	"image": "Ending5",
+	"description": "당신의 연임만을 목적으로 한 정책은 한국을 최악으로 이끌었습니다. 하지만 어떻습니까? 나만 잘 살면 됐죠!",
+	"conditions": [
+		{
+			"target": 0,
+			"value": 5,
+			"condition": false
+		},
+		{
+			"target": 2,
+			"value": 3,
+			"condition": true
+		},
+		{
+			"target": 3,
+			"value": 3,
+			"condition": true
+		},
+		{
+			"target": 4,
+			"value": 3,
+			"condition": true
+		},
+		{
+			"target": 5,
+			"value": 3,
+			"condition": true
+		},
+		{
+			"target": 6,
+			"value": 8,
+			"condition": false
+		}
+	]
+}

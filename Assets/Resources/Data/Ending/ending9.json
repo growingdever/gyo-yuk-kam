@@ -1,0 +1,16 @@
+{
+	"image": "Ending9",
+	"description": "당신의 정책은 학생들을 극심한 스트레스로 자살로 몰아넣었습니다. 당신이 인간입니까?",
+	"conditions": [
+		{
+			"target": 0,
+			"value": 4,
+			"condition": false
+		},
+		{
+			"target": 6,
+			"value": 10,
+			"condition": true
+		}
+	]
+}

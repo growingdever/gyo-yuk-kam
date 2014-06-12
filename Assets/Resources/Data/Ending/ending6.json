@@ -1,0 +1,21 @@
+{
+	"image": "Ending6",
+	"description": "당신의 연임 기간동안 학생들은 그저 '문제는 완벽하게' 푸는 감정없는 기계가 되었습니다. 참 밝은 미래군요.",
+	"conditions": [
+		{
+			"target": 0,
+			"value": 3,
+			"condition": true
+		},
+		{
+			"target": 2,
+			"value": 9,
+			"condition": true
+		},
+		{
+			"target": 4,
+			"value": 3,
+			"condition": false
+		}
+	]
+}
