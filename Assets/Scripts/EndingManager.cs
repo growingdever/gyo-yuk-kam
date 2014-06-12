@@ -90,6 +90,8 @@ public class EndingManager : MonoBehaviour {
 		
 		public Ending(JsonData json) {
 			_imagePath = (string)json["image"];
+
+			_description = (string)json["description"];
 			
 			JsonData conditions = json["conditions"];
 			_conditions = new Condition[conditions.Count];
