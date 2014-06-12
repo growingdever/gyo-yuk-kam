@@ -1,0 +1,10 @@
+{
+	"image": "News11",
+	"conditions": [
+		{
+			"target": 4,
+			"value": 4,
+			"condition": false
+		}
+	]
+}

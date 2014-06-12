@@ -109,6 +109,8 @@ public class GameManager : MonoBehaviour {
 		_newsManager = new NewsManager ();
 
 		UpdateGauge();
+
+		StartCoroutine ("ShowNews", 0);
 	}
 	
 	// Update is called once per frame
@@ -283,10 +285,9 @@ public class GameManager : MonoBehaviour {
 
 
 		// show news
-		ArrayList newsList = _newsManager.GetSuitableNews (_player.GetStatus ()._variableArray);
+		ArrayList newsList = _newsManager.GetSuitableNewsIndex (_player.GetStatus ()._variableArray);
 		if (newsList.Count > 0) {
-			NewsManager.News news = (NewsManager.News)newsList[ Random.Range( 0, newsList.Count ) ];
-			yield return StartCoroutine( NewsDialogController.Build(_uiRoot, news).Show () );
+			StartCoroutine( "ShowNews", Random.Range( 1, newsList.Count ) );
 		}
 
 
@@ -301,6 +302,11 @@ public class GameManager : MonoBehaviour {
 		// update calender ui
 		_calendarMonth.text = CalculatedMonth() + "";
 		_calendarDay.text = "1";
+	}
+
+	IEnumerator ShowNews(int index) {
+		NewsManager.News news = (NewsManager.News)_newsManager.NewsDataList[index];
+		yield return StartCoroutine( NewsDialogController.Build(_uiRoot, news).Show () );
 	}
 
 	public void OnClickBudget() {

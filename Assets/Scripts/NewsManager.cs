@@ -32,22 +32,23 @@ public class NewsManager {
 		}
 	}
 
-	public ArrayList GetSuitableNews(double[] statusArray) {
+	public ArrayList GetSuitableNewsIndex(double[] statusArray) {
 		ArrayList pRet = new ArrayList ();
 
-		foreach (News news in _newsDataList) {
+		for( int i = 0; i < _newsDataList.Count; i ++ ) {
+			News news = (News)_newsDataList[i];
 			Condition[] conditions = news.Conditions;
 
-			int i;
-			for( i = 0; i < conditions.Length; i ++ ) {
-				Condition cond = conditions[i];
+			int j;
+			for( j = 0; j < conditions.Length; j ++ ) {
+				Condition cond = conditions[j];
 				if( statusArray[cond.Target] > cond.Value != cond.Cond ) {
 					break;
 				}
 			}
 
-			if( i == conditions.Length ) {
-				pRet.Add( news );
+			if( j == conditions.Length ) {
+				pRet.Add( i );
 			}
 		}
 

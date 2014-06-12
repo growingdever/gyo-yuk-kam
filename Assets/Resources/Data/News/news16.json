@@ -1,0 +1,40 @@
+{
+	"image": "News16",
+	"conditions": [
+		{
+			"target": 0,
+			"value": 8,
+			"condition": true
+		},
+		{
+			"target": 1,
+			"value": 8,
+			"condition": true
+		},
+		{
+			"target": 2,
+			"value": 8,
+			"condition": true
+		},
+		{
+			"target": 3,
+			"value": 8,
+			"condition": true
+		},
+		{
+			"target": 4,
+			"value": 8,
+			"condition": true
+		},
+		{
+			"target": 5,
+			"value": 8,
+			"condition": true
+		},
+		{
+			"target": 6,
+			"value": 4,
+			"condition": false
+		}
+	]
+}
