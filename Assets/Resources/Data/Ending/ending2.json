@@ -1,0 +1,36 @@
+{
+	"image": "Ending2",
+	"description": "당신은 대한민국의 영웅입니다. 무슨 말이 더 필요하겠습니까?",
+	"conditions": [
+		{
+			"target": 0,
+			"value": 8,
+			"condition": true
+		},
+		{
+			"target": 2,
+			"value": 6,
+			"condition": true
+		},
+		{
+			"target": 3,
+			"value": 6,
+			"condition": true
+		},
+		{
+			"target": 4,
+			"value": 7,
+			"condition": true
+		},
+		{
+			"target": 5,
+			"value": 7,
+			"condition": true
+		},
+		{
+			"target": 6,
+			"value": 5,
+			"condition": true
+		}
+	]
+}
