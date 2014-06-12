@@ -13,6 +13,12 @@ public class GameManager : MonoBehaviour {
 	int _passedSemester;
 
 	private Player _player;
+	public Player Player {
+		get {
+			return _player;
+		}
+	}
+
 	private EventManager _eventManager;
 
 	private ScheduleManager _scheduleManager;
