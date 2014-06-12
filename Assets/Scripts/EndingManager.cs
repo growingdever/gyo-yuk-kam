@@ -24,7 +24,13 @@ public class EndingManager : MonoBehaviour {
 		LoadDataFromFiles();
 
 		ArrayList list = GetSuitableEnding( player.GetStatus()._variableArray );
-		Ending ending = (Ending)list[ Random.Range( 0, list.Count ) ];
+		Ending ending;
+		if (list.Count > 1) {
+			ending = (Ending)list[ Random.Range( 1, list.Count ) ];
+		} else {
+			ending = (Ending)list[0];
+		}
+
 		_image.spriteName = ending.ImagePath;
 		_label.text = ending.Description;
 	}
