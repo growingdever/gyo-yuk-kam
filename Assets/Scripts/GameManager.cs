@@ -214,6 +214,7 @@ public class GameManager : MonoBehaviour {
 			int numOfTerm = _passedSemester / (IncumbencyYear * 2);
 			if( numOfTerm == NumberOfTerm ) {
 				Application.LoadLevel(2);
+				yield break;
 			}
 
 			double needMoreSatisfaction = (numOfTerm - 1) * 1;
