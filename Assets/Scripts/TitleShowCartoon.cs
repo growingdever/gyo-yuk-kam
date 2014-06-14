@@ -19,6 +19,6 @@ public class TitleShowCartoon : MonoBehaviour {
 
 	IEnumerator ChangeScene() {
 		yield return new WaitForSeconds( 3.0f );
-		Application.LoadLevel( 0 );
+		Application.LoadLevel( 1 );
 	}
 }

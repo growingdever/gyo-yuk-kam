@@ -24,7 +24,7 @@ public class YeonimDialogController : MonoBehaviour {
 	public void OnClick() {
 		if (_isFail) {
 			// go to title scene
-			Application.LoadLevel (0);	
+			Application.LoadLevel (1);	
 		} else {
 			// close dialog and play continually
 			Close();

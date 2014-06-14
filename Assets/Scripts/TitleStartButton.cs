@@ -25,7 +25,7 @@ public class TitleStartButton : MonoBehaviour {
 
 		_curr++;
 		if (_curr > 5) {
-			Application.LoadLevel (1);
+			Application.LoadLevel (2);
 		}
 
 		Texture tex = Resources.Load ("Images/Tu" + _curr) as Texture;

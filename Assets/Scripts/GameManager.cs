@@ -213,7 +213,7 @@ public class GameManager : MonoBehaviour {
 		if( _passedSemester != _prevCheckedSemester && _passedSemester % (IncumbencyYear * 2) == 0 ) {
 			int numOfTerm = _passedSemester / (IncumbencyYear * 2);
 			if( numOfTerm == NumberOfTerm ) {
-				Application.LoadLevel(2);
+				Application.LoadLevel(3);
 				yield break;
 			}
 
