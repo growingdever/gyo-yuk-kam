@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BudgetManager {
+public class BudgetManager
+{
 
-	public enum Part {
+	public enum Part
+	{
 		SchoolTime,
 		NormalStudy,
 		Stamina,
@@ -26,25 +28,29 @@ public class BudgetManager {
 	};
 
 	double[] _pointArray;
+
 	public double[] Point {
 		get {
 			return _pointArray;
 		}
 	}
 
-	public BudgetManager() {
+	public BudgetManager ()
+	{
 		_pointArray = new double[(int)Part.Count];
-		InitPoints();
+		InitPoints ();
 	}
 
-	public void InitPoints() {
-		for( int i = 0; i < 7; i ++ ) {
-			_pointArray[i] = 5;
+	public void InitPoints ()
+	{
+		for (int i = 0; i < 7; i++) {
+			_pointArray [i] = 5;
 		}
 	}
 
-	public ArrayList GetDeltaArray() {
-		ArrayList list = new ArrayList();
+	public ArrayList GetDeltaArray ()
+	{
+		ArrayList list = new ArrayList ();
 
 		int mid = 5;
 		double[,] coef = {
@@ -57,20 +63,20 @@ public class BudgetManager {
 			{ 1, 0, -1, 0, 0, -0.5, -2 }
 		};
 
-		int totalStatus = coef.GetLength(0);
+		int totalStatus = coef.GetLength (0);
 
 		double[] deltaArr = new double[totalStatus];
-		for( int i = 0; i < totalStatus; i ++ ) {
-			for( int j = 0; j < _pointArray.Length; j ++ ) {
-				deltaArr[i] += coef[ i, j ] * (_pointArray[j] - mid);
+		for (int i = 0; i < totalStatus; i++) {
+			for (int j = 0; j < _pointArray.Length; j++) {
+				deltaArr [i] += coef [i, j] * (_pointArray [j] - mid);
 			}
 		}
 
-		for( int i = 0; i < deltaArr.Length; i ++ ) {
-			DeltaStatus delta = new DeltaStatus( i, deltaArr[i] );
-			list.Add( delta );
+		for (int i = 0; i < deltaArr.Length; i++) {
+			DeltaStatus delta = new DeltaStatus (i, deltaArr [i]);
+			list.Add (delta);
 		}
         
-        return list;
+		return list;
 	}
 }

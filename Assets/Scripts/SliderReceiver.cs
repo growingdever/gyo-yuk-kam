@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public interface SliderReceiver {
-	void OnValueChanged(SliderSender sender);
+public interface SliderReceiver
+{
+		void OnValueChanged (SliderSender sender);
 }
